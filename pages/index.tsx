@@ -6,4 +6,4 @@ const HomePage: NextPage = () => {
 	return <Home />;
 };
 
-export default Home;
+export default HomePage;
