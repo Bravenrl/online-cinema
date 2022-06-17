@@ -3,17 +3,17 @@ $bar-width: 20%;
 .layout {
   @apply relative;
 
-  > div:first-child,
-  > div:last-child {
+  > nav,
+  > aside {
     @apply fixed top-0 bottom-0 overflow-y-scroll;
     width: $bar-width;
     max-width: 350px;
   }
 
-  > div:first-child {
+  > nav {
     @apply left-0 border-r border-r-gray-800;
   }
-  > div:last-child {
+  > aside {
     @apply right-0 border-l border-l-gray-800;
   }
 }

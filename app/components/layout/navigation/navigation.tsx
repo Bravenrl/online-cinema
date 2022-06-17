@@ -1,8 +1,13 @@
-import styles from './navigation.module.scss'
+import Logo from './logo/logo';
+import MenuContainer from './menu-container/menu-container';
+import styles from './navigation.module.scss';
 
-function Navigation():JSX.Element {
+function Navigation(): JSX.Element {
   return (
-    <div>Navigation</div>
-  )
+    <nav className={styles.navigation}>
+      <Logo />
+      <MenuContainer />
+    </nav>
+  );
 }
-export default Navigation
+export default Navigation;
