@@ -1,9 +1,12 @@
-import styles from './sidebar.module.scss'
+import Search from './search/search';
+import styles from './sidebar.module.scss';
 
-function Sidebar():JSX.Element {
+function Sidebar(): JSX.Element {
   return (
-    <aside>Sidebar</aside>
-  )
+    <aside className={styles.sidebar}>
+      <Search />
+    </aside>
+  );
 }
 
-export default Sidebar
+export default Sidebar;

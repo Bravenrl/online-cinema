@@ -1,6 +1,6 @@
 import SkeletonLoader from '@/ui/skeleton-loader/skeleton-loader';
 import { GENRE_SKELETON_COUNT } from '@/config/skeleton.config';
-import { usePopularGenres } from '@/hooks/usePopularGenres';
+import { usePopularGenres } from '@/hooks/use-popular-genres';
 
 import Menu from '../menu/menu';
 

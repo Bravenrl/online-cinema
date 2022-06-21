@@ -1,26 +1,27 @@
 import { MenuTitle } from '@/config/menu.config';
 import { TypeMenu } from '../types/menu.types';
+import { Icon } from './icon.data';
 
 export const firstMenu: TypeMenu = {
   title: MenuTitle.Main,
   items: [
     {
-      icon: 'MdHome',
+      icon: Icon.Home,
       link: '/',
       title: 'Home',
     },
     {
-      icon: 'MdExplore',
+      icon: Icon.Discovery,
       link: '/genres  ',
       title: 'Discovery',
     },
     {
-      icon: 'MdRefresh',
+      icon: Icon.FreshMovies,
       link: '/fresh',
       title: 'Fresh movies',
     },
     {
-      icon: 'MdLocalFireDepartment',
+      icon: Icon.TrendingNow,
       link: '/trending',
       title: 'Trending Now',
     },
