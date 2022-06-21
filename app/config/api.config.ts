@@ -15,3 +15,8 @@ export enum AppRoute {
   Movie = '/movie',
   Manage = '/manage',
 }
+
+export enum QueryTitle {
+  Genres = 'popular genres',
+  SearchMovie = 'search movie list',
+}
