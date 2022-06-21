@@ -5,4 +5,3 @@ export enum MenuTitle {
   General = 'General',
   Main = 'Menu',
 }
-

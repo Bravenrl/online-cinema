@@ -29,6 +29,6 @@
       "@/utils/*": ["utils/*"],
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "app/components/ui/material-icon"],
   "exclude": ["node_modules"]
 }
