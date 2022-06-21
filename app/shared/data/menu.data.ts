@@ -1,7 +1,8 @@
+import { MenuTitle } from '@/config/menu.config';
 import { TypeMenu } from '../types/menu.types';
 
 export const firstMenu: TypeMenu = {
-  title: 'Menu',
+  title: MenuTitle.Main,
   items: [
     {
       icon: 'MdHome',
@@ -27,6 +28,6 @@ export const firstMenu: TypeMenu = {
 };
 
 export const userMenu: TypeMenu = {
-  title: 'General',
+  title: MenuTitle.General,
   items: [],
 };

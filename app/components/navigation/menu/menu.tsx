@@ -1,3 +1,4 @@
+import { MenuTitle } from '@/config/menu.config';
 import { TypeMenu } from '@/shared/types/menu.types';
 import AuthItems from '../auth/auth-items';
 import MenuItem from '../menu-item/menu-item';
@@ -15,7 +16,7 @@ function Menu({menu}:MenuProps): JSX.Element {
       {items.map(item => 
         <MenuItem item = {item} key = {item.link}/>
         )}
-      {title === 'General' ? <AuthItems /> : null}
+      {title === MenuTitle.General ? <AuthItems /> : null}
     </ul>
     </nav>);
 }
