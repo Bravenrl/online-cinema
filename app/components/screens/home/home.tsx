@@ -1,12 +1,17 @@
-import BaseLayout from '@/components/layout/base-layout/base-layout';
+import Heading from '@/components/heading/heading';
+import Meta from '@/components/meta/meta';
+import { HeadingClassName, HeadingTitle } from '@/config/heading.config';
+
+import { DESCRIPTION, TITLE } from '@/shared/data/meta.data';
 
 type Home = {};
 
 function Home({}: Home): JSX.Element {
   return (
-    <BaseLayout>
-      <div>Home</div>
-    </BaseLayout>
+    <>
+      <Meta title={TITLE} description={DESCRIPTION} />
+      <Heading title={HeadingTitle.Home} className={HeadingClassName.Home} />
+    </>
   );
 }
 

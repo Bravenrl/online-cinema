@@ -1,13 +1,13 @@
 import Navigation from '../navigation/navigation';
 import Sidebar from '../sidebar/sidebar';
 
-import styles from './base-layout.module.scss';
+import styles from './layout.module.scss';
 
-type BaseLayout = {
-  children: JSX.Element;
+type LayoutProps = {
+  children: React.ReactNode;
 };
 
-function BaseLayout({ children }: BaseLayout) {
+function Layout({ children }: LayoutProps) {
   return (
     <div className={styles.layout}>
       <Navigation />
@@ -17,4 +17,4 @@ function BaseLayout({ children }: BaseLayout) {
   );
 }
 
-export default BaseLayout;
+export default Layout;
