@@ -7,16 +7,5 @@ export enum ApiRoute {
   Users = '/users',
   Movies = '/movies',
   Ratings = '/ratings',
-}
-
-export enum AppRoute {
-  Actor = '/actor',
-  Genre = '/genre',
-  Movie = '/movie',
-  Manage = '/manage',
-}
-
-export enum QueryTitle {
-  Genres = 'popular genres',
-  SearchMovie = 'search movie list',
+  MostPopular = '/most-popular',
 }

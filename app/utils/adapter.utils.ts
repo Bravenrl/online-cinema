@@ -1,7 +1,7 @@
 import { TypeMenuItem } from '@/shared/types/menu.types';
 import { TypeGenre } from '@/shared/types/movie.types';
 
-import { AppRoute } from '@/config/api.config';
+import { AppRoute } from '@/config/app.config';
 
 import { getUrl } from './api.utils';
 

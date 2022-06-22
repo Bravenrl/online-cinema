@@ -4,4 +4,5 @@ export enum Icon {
   FreshMovies = 'MdRefresh',
   TrendingNow = 'MdLocalFireDepartment',
   Search = 'MdSearch',
+  RatingStar = 'MdStarRate'
 }

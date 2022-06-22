@@ -3,7 +3,7 @@ import { useQuery } from 'react-query';
 
 import { MovieService } from '@/services/movie.service';
 
-import { QueryTitle } from '@/config/api.config';
+import { QueryTitle } from '@/config/query.config';
 
 import { useDebounce } from './use-debounce';
 
