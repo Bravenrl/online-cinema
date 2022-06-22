@@ -1,0 +1,1 @@
+export const FAVORITE_NO_AUTH_MESSAGE = 'For viewing favorites plz authorize!'

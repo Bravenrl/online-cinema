@@ -4,7 +4,9 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
 
-$primary-color: #e30b13;
+:root {
+  --primary-color: #e30b13;
+}
 
 html,
 body {
@@ -24,7 +26,7 @@ a {
   box-sizing: border-box;
 }
 
-input[type="file"] {
+input[type='file'] {
   @apply cursor-pointer focus:outline-none;
 }
 

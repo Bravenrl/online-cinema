@@ -5,7 +5,7 @@ import { TypeMovie } from '@/shared/types/movie.types';
 
 import { getUrl } from '@/utils/api.utils';
 
-import { AppRoute } from '@/config/api.config';
+import { AppRoute } from '@/config/app.config';
 
 import styles from './search-list.module.scss';
 
