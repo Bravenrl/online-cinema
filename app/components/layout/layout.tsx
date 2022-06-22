@@ -11,7 +11,7 @@ function Layout({ children }: LayoutProps) {
   return (
     <div className={styles.layout}>
       <Navigation />
-      <div className={styles.center}>{children}</div>
+      <main className={styles.center}>{children}</main>
       <Sidebar />
     </div>
   );
