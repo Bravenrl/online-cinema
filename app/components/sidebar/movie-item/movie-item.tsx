@@ -20,7 +20,7 @@ type MovieItemProps = {
 function MovieItem({ movie }: MovieItemProps): JSX.Element {
   return (
     <div className={styles.item}>
-      <Link href={getUrl(AppRoute.Manage, movie.slug)}>
+      <Link href={getUrl(AppRoute.Movie, movie.slug)}>
         <a>
           <Image
             width={65}

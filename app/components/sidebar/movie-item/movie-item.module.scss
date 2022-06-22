@@ -28,6 +28,9 @@
       > svg {
         @apply fill-yellow-700 mr-2 text-lg;
       }
+      > span {
+        @apply text-white font-medium pt-0.5;
+      }
     }
   }
 }
