@@ -1,7 +1,11 @@
 .default {
-    @apply text-white text-opacity-80 font-semibold text-3xl;
+  @apply text-white text-opacity-80 font-semibold text-3xl;
 }
 
 .home {
-    @apply text-gray-500 mb-8 text-xl;
+  @apply text-gray-500 mb-8 text-xl;
+}
+
+.auth {
+  @apply mb-6;
 }
