@@ -1,10 +1,11 @@
-import styles from './popular-movies.module.scss';
+import styles from './favorite-movies.module.scss';
 
 type FavoriteMoviesProps = {
-
+  
 };
 
-function FavoriteMovies({}:FavoriteMoviesProps): JSX.Element {
-  return <div>Fav</div>;
+function FavoriteMovies({}: FavoriteMoviesProps): JSX.Element {
+    return <div>FavoriteMovies</div>;
 }
+
 export default FavoriteMovies;
