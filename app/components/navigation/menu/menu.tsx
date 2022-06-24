@@ -1,6 +1,6 @@
 import { MenuTitle } from '@/config/menu.config';
 import { TypeMenu } from '@/shared/types/menu.types';
-import AuthItems from '../auth/auth-items';
+import AuthItems from '../auth-items/auth-items';
 import MenuItem from '../menu-item/menu-item';
 import styles from './menu.module.scss';
 

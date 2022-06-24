@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 
+import AuthFields from '@/components/auth-fields/auth-fields';
 import Heading from '@/components/heading/heading';
 import Meta from '@/components/meta/meta';
 import Button from '@/components/ui/button/button';
@@ -31,12 +32,18 @@ function Auth({}: AuthProps): JSX.Element {
     mode: 'onChange',
   });
 
-  const login = () => {};
-  const registration = () => {};
+  const login = (data: any) => {
+    console.table(data);
+    console.log('login');
+  };
+  const registration = (data: any) => {
+    console.table(data);
+    console.log('register');
+  };
 
   const onSubmit: SubmitHandler<TypeUserAuth> = (data) => {
-    if (type === AuthConfig.Login) login();
-    if (type === AuthConfig.Register) registration();
+    if (type === AuthConfig.Login) login(data);
+    if (type === AuthConfig.Register) registration(data);
 
     reset();
   };
@@ -50,7 +57,11 @@ function Auth({}: AuthProps): JSX.Element {
             title={HeadingTitle.Auth}
             className={HeadingClassName.Auth}
           />
-          {/* fields */}
+          <AuthFields
+            register={register}
+            formState={formState}
+            isPasswordRequired
+          />
           <div className={styles.buttons}>
             <Button
               type='submit'
