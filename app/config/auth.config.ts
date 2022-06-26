@@ -5,4 +5,5 @@ export enum AuthConfig {
   AccessToken = 'accessToken',
   RefreshToken = 'refreshToken',
   JwtExpired = 'jwt expired',
+  JwtProvided = 'jwt must be provided',
 }

@@ -12,3 +12,10 @@ export enum ApiRoute {
   Login = '/login',
   RefreshToken = '/access-token',
 }
+
+export const enum HttpCode {
+  Unauthorized = 401,
+  BadRequest = 400,
+  NotFound = 404,
+  OK = 200,
+}
