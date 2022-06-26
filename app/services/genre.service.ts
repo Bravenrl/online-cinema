@@ -1,5 +1,4 @@
 import { axiosFree } from 'api/api';
-import axios from 'axios';
 
 import { TypeGenre } from '@/shared/types/movie.types';
 
@@ -9,7 +8,7 @@ import { ApiRoute } from '@/config/api.config';
 
 export const GenreService = {
   async getAll(searchTerm?: string) {
-   return axiosFree.get<TypeGenre[]>(getUrl(ApiRoute.Genres, ''), {
+   return axiosFree.get<TypeGenre[]>(ApiRoute.Genres, {
       params: searchTerm
         ? {
             searchTerm,

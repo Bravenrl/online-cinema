@@ -4,3 +4,10 @@ export const ToastConfig = {
   Newest: false,
   Position: 'top-right',
 };
+
+export enum ToastMessages {
+  Register = 'Registration completed successfully',
+  Login ='Login completed successfully',
+  JWT = 'Your authorization is finished, plz sign in',
+  Error = 'Error required'
+}
