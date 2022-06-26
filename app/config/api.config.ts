@@ -11,6 +11,7 @@ export enum ApiRoute {
   Registration = '/register',
   Login = '/login',
   RefreshToken = '/access-token',
+  NotFound = '/404',
 }
 
 export const enum HttpCode {

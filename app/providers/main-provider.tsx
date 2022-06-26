@@ -6,9 +6,11 @@ import StyledToastContainer from '@/components/ui/styled-toast-container/styled-
 
 import { store } from '@/store/store';
 
+import AuthProvider from './auth-provider/auth-provider';
 import HeadProvider from './head-provider/head-provider';
+import { TypeComponentAuthFields } from '@/shared/types/auth.types';
 
-type MainProviderProps = {
+type MainProviderProps = TypeComponentAuthFields & {
   children: React.ReactNode;
 };
 
@@ -20,13 +22,15 @@ const queryClient = new QueryClient({
   },
 });
 
-function MainProvider({ children }: MainProviderProps): JSX.Element {
+function MainProvider({ children, Component }: MainProviderProps): JSX.Element {
   return (
     <HeadProvider>
       <Provider store={store}>
         <QueryClientProvider client={queryClient}>
           <StyledToastContainer />
-          <Layout>{children}</Layout>
+          <AuthProvider Component={Component}>
+            <Layout>{children}</Layout>
+          </AuthProvider>
         </QueryClientProvider>
       </Provider>
     </HeadProvider>
