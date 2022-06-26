@@ -10,12 +10,12 @@ export const firstMenu: TypeMenu = {
   items: [
     {
       icon: Icon.Home,
-      link: '/',
+      link: AppRoute.Home,
       title: 'Home',
     },
     {
       icon: Icon.Discovery,
-      link: '/genres  ',
+      link: '/genres',
       title: 'Discovery',
     },
     {
