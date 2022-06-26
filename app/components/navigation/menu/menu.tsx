@@ -1,5 +1,6 @@
 import { MenuTitle } from '@/config/menu.config';
 import { TypeMenu } from '@/shared/types/menu.types';
+import dynamic from 'next/dynamic';
 import AuthItems from '../auth-items/auth-items';
 import MenuItem from '../menu-item/menu-item';
 import styles from './menu.module.scss';
@@ -7,6 +8,10 @@ import styles from './menu.module.scss';
 type MenuProps = {
   menu: TypeMenu;
 }
+
+const DynamicAuthItems = dynamic(() => import('../auth-items/auth-items'), {
+	ssr: false,
+})
 
 function Menu({menu}:MenuProps): JSX.Element {
   const {title, items} = menu;
@@ -16,7 +21,7 @@ function Menu({menu}:MenuProps): JSX.Element {
       {items.map(item => 
         <MenuItem item = {item} key = {item.link}/>
         )}
-      {title === MenuTitle.General ? <AuthItems /> : null}
+      {title === MenuTitle.General ? <DynamicAuthItems /> : null}
     </ul>
     </nav>);
 }
