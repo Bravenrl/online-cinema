@@ -8,7 +8,7 @@ export enum ApiRoute {
   Movies = '/movies',
   Ratings = '/ratings',
   MostPopular = '/most-popular',
-  Register = '/register',
+  Registration = '/register',
   Login = '/login',
   RefreshToken = '/access-token',
 }

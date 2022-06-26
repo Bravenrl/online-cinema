@@ -10,5 +10,5 @@ export enum AsyncThunk {
   CheckAuthStatus = 'user/checkAuthStatus',
   Login = 'user/login',
   Logout = 'user/logout',
-  Register = 'user/register',
+  Registration = 'user/registration',
 }

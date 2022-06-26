@@ -5,4 +5,6 @@ export enum AppRoute {
   Movie = '/movie',
   Manage = '/manage',
   Trending = '/trending',
+  Auth = '/auth',
+  Profile = '/profile',
 }

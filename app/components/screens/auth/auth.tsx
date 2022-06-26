@@ -6,6 +6,7 @@ import Heading from '@/components/heading/heading';
 import Meta from '@/components/meta/meta';
 import Button from '@/components/ui/button/button';
 
+import { useActions } from '@/hooks/use-actions';
 import { useAuth } from '@/hooks/use-auth';
 import { useAuthRedirect } from '@/hooks/use-auth-redirect';
 
@@ -21,8 +22,8 @@ type AuthProps = {};
 
 function Auth({}: AuthProps): JSX.Element {
   useAuthRedirect();
-
   const { isLoading } = useAuth();
+  const { login, registration } = useActions();
 
   const [type, setType] = useState<AuthConfig.Login | AuthConfig.Register>(
     AuthConfig.Login
@@ -31,15 +32,6 @@ function Auth({}: AuthProps): JSX.Element {
   const { register, handleSubmit, formState, reset } = useForm<TypeUserAuth>({
     mode: 'onChange',
   });
-
-  const login = (data: any) => {
-    console.table(data);
-    console.log('login');
-  };
-  const registration = (data: any) => {
-    console.table(data);
-    console.log('register');
-  };
 
   const onSubmit: SubmitHandler<TypeUserAuth> = (data) => {
     if (type === AuthConfig.Login) login(data);

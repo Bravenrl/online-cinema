@@ -4,5 +4,9 @@ export enum Icon {
   FreshMovies = 'MdRefresh',
   TrendingNow = 'MdLocalFireDepartment',
   Search = 'MdSearch',
-  RatingStar = 'MdStarRate'
+  RatingStar = 'MdStarRate',
+  Profile = 'MdSettings',
+  Login = 'MdLogin',
+  Admin = 'MdOutlineLock',
+  Logout = 'MdLogout',
 }

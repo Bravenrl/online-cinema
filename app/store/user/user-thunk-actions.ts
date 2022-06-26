@@ -1,4 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import { errCatch } from 'api/api.helpers';
 import { toast } from 'react-toastify';
 
 import { TypeUserAuth, TypeUserAuthResponse } from '@/shared/types/user.types';
@@ -7,16 +8,16 @@ import { AuthService } from '@/services/auth/auth.service';
 
 import { toastError } from '@/utils/toast-error.utils';
 
+import { AuthConfig } from '@/config/auth.config';
 import { AsyncThunk } from '@/config/store.config';
 import { ToastMessages } from '@/config/toast.config';
 
-
-export const register = createAsyncThunk<TypeUserAuthResponse, TypeUserAuth>(
-  AsyncThunk.Register,
+export const registration = createAsyncThunk<TypeUserAuthResponse, TypeUserAuth>(
+  AsyncThunk.Registration,
   async ({ email, password }, thunkApi) => {
     try {
-      const data = await AuthService.register(email, password);
-      toast.success(ToastMessages.Register);
+      const data = await AuthService.registration(email, password);
+      toast.success(ToastMessages.Registration);
       return data;
     } catch (error) {
       toastError(error);
@@ -30,7 +31,7 @@ export const login = createAsyncThunk<TypeUserAuthResponse, TypeUserAuth>(
   async ({ email, password }, thunkApi) => {
     try {
       const data = await AuthService.login(email, password);
-      toast.success(ToastMessages.Register);
+      toast.success(ToastMessages.Login);
       return data;
     } catch (error) {
       toastError(error);
@@ -44,13 +45,20 @@ export const logout = createAsyncThunk(AsyncThunk.Logout, async () => {
 });
 
 export const checkAuth = createAsyncThunk<TypeUserAuthResponse>(
-  AsyncThunk.Login,
+  AsyncThunk.CheckAuthStatus,
   async (_, thunkApi) => {
     try {
       const data = await AuthService.getNewTokens();
       return data;
     } catch (error) {
-      toastError(error);
+      const errorMessage = errCatch(error);
+
+      if (errorMessage === AuthConfig.JwtExpired) {
+        toastError(error, ToastMessages.JWT);
+        thunkApi.dispatch(logout());
+      } else {
+        toastError(error);
+      }
       return thunkApi.rejectWithValue(error);
     }
   }

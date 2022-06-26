@@ -13,9 +13,9 @@ import { ApiRoute } from '@/config/api.config';
 import { AuthConfig } from '@/config/auth.config';
 
 export const AuthService = {
-  async register(email: string, password: string) {
+  async registration(email: string, password: string) {
     const { data } = await axiosFree.post<TypeUserAuthResponse>(
-      ApiRoute.Auth + ApiRoute.Register,
+      ApiRoute.Auth + ApiRoute.Registration,
       { email, password }
     );
 

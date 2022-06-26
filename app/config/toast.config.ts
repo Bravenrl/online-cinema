@@ -6,7 +6,7 @@ export const ToastConfig = {
 };
 
 export enum ToastMessages {
-  Register = 'Registration completed successfully',
+  Registration = 'Registration completed successfully',
   Login ='Login completed successfully',
   JWT = 'Your authorization is finished, plz sign in',
   Error = 'Error required'
