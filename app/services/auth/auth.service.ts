@@ -41,7 +41,7 @@ export const AuthService = {
     const refreshToken = Cookies.get(AuthConfig.RefreshToken);
     const { data } = await axiosFree.post<TypeUserAuthResponse>(
       ApiRoute.Auth + ApiRoute.Login + ApiRoute.RefreshToken,
-      refreshToken,
+      { refreshToken },
       { headers: getContentType() }
     );
 
