@@ -1,0 +1,20 @@
+.block {
+  @apply air-block w-2/5;
+}
+
+.popular {
+  @apply text-center p-8;
+
+  img {
+    @apply rounded-layout shadow-lg image-like-bg;
+  }
+  h2 {
+    @apply mb-2;
+  }
+  .opened {
+    @apply opacity-80 font-medium mb-3;
+  }
+  .skeleton {
+    @apply h-40;
+  }
+}

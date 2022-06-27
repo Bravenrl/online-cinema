@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 
 import AuthFields from '@/components/auth-fields/auth-fields';
-import Heading from '@/components/heading/heading';
+import Heading from '@/components/ui/heading/heading';
 import Meta from '@/components/meta/meta';
 import Button from '@/components/ui/button/button';
 

@@ -10,3 +10,7 @@ export enum HeadingTitle {
   Err500 = '500 - Server-side error',
   Admin = 'Some statistics',
 }
+
+export enum SubHeadingTitle {
+  MostPopular = 'The most popular movie',
+}

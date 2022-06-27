@@ -1,14 +1,16 @@
 import { QueryClient, QueryClientProvider } from 'react-query';
+import { ReactQueryDevtools } from 'react-query/devtools';
 import { Provider } from 'react-redux';
 
 import Layout from '@/components/layout/layout';
 import StyledToastContainer from '@/components/ui/styled-toast-container/styled-toast-container';
 
+import { TypeComponentAuthFields } from '@/shared/types/auth.types';
+
 import { store } from '@/store/store';
 
 import AuthProvider from './auth-provider/auth-provider';
 import HeadProvider from './head-provider/head-provider';
-import { TypeComponentAuthFields } from '@/shared/types/auth.types';
 
 type MainProviderProps = TypeComponentAuthFields & {
   children: React.ReactNode;
@@ -31,6 +33,7 @@ function MainProvider({ children, Component }: MainProviderProps): JSX.Element {
           <AuthProvider Component={Component}>
             <Layout>{children}</Layout>
           </AuthProvider>
+          <ReactQueryDevtools initialIsOpen={false} />
         </QueryClientProvider>
       </Provider>
     </HeadProvider>

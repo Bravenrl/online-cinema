@@ -1,4 +1,4 @@
-import Heading from '@/components/heading/heading';
+import Heading from '@/components/ui/heading/heading';
 import Meta from '@/components/meta/meta';
  
 import { MetaTitle } from '@/shared/data/meta.data';
