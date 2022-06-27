@@ -1,0 +1,22 @@
+.block {
+  @apply air-block w-2/5;
+}
+
+.wrapper {
+  @apply mr-28 p-8 text-center;
+
+  &.count {
+    @apply flex flex-col items-center justify-center p-0;
+  }
+
+  .number {
+    @apply text-7xl font-medium mb-1;
+  }
+
+  .description {
+    @apply opacity-70 text-lg;
+  }
+}
+.skeleton {
+  @apply h-40;
+}
