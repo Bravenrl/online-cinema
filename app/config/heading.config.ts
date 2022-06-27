@@ -8,4 +8,5 @@ export enum HeadingTitle {
   Auth = 'Auth',
   Err404 = '404 - Page not found',
   Err500 = '500 - Server-side error',
+  Admin = 'Some statistics',
 }
