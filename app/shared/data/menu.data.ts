@@ -25,7 +25,7 @@ export const firstMenu: TypeMenu = {
     },
     {
       icon: Icon.TrendingNow,
-      link: '/trending',
+      link: AppRoute.Trending,
       title: 'Trending Now',
     },
   ],

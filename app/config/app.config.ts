@@ -7,4 +7,8 @@ export enum AppRoute {
   Trending = '/trending',
   Auth = '/auth',
   Profile = '/profile',
+  AUsers = '/users',
+  AMovies = '/movies',
+  AActors = '/actors',
+  AGenres = '/genres',
 }
