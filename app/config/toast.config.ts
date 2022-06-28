@@ -9,5 +9,8 @@ export enum ToastMessages {
   Registration = 'Registration completed successfully',
   Login ='Login completed successfully',
   JWT = 'Your authorization is finished, plz sign in',
-  Error = 'Error required'
+  Error = 'Error required',
+  ErrorUserList = 'Error user list',
+  ErrorDeleteUser = 'Error delete user',
+  DeleteUser = 'delete is successful'
 }

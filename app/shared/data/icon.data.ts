@@ -9,4 +9,6 @@ export enum Icon {
   Login = 'MdLogin',
   Admin = 'MdOutlineLock',
   Logout = 'MdLogout',
+  EditUser = 'MdEdit', 
+  DeleteUser = 'MdClose', 
 }

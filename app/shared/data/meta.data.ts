@@ -1,7 +1,8 @@
 export enum MetaTitle {
   Home = 'Watch movies online',
   Auth = 'Auth',
-  Admin = 'Admin panel',
+  AdminHome = 'Admin panel',
+  AdminUsers = 'Admin user list',
 }
 
 export const TITLE_ERR = 'Page not found';

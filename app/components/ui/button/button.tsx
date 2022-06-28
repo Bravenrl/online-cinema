@@ -7,7 +7,7 @@ type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement>;
 
 function Button({ children, className, ...rest }: ButtonProps): JSX.Element {
   return (
-    <button className={cn(styles.button)} {...rest}>
+    <button className={cn(styles.button, className)} {...rest}>
       {children}
     </button>
   );

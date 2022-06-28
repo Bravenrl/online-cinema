@@ -1,6 +1,7 @@
 import SearchField from '@/components/ui/search-field/search-field';
+import { useSearch } from '@/hooks/query-hooks/use-search';
 
-import { useSearch } from '@/hooks/use-search';
+
 import SearchList from '../search-list/search-list';
 
 import styles from './search.module.scss';

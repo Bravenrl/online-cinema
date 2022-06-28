@@ -11,4 +11,6 @@ export enum AppRoute {
   AMovies = '/movies',
   AActors = '/actors',
   AGenres = '/genres',
+  User = '/user',
+  Edit = '/edit'
 }
