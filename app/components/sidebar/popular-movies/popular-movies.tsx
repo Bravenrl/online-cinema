@@ -1,6 +1,6 @@
 import SkeletonLoader from '@/components/ui/skeleton-loader/skeleton-loader';
 
-import { usePopularMovies } from '@/hooks/use-popular-movies';
+import { usePopularMovies } from '@/hooks/query-hooks/use-popular-movies';
 
 import { POPULAR_SKELETON_COUNT } from '@/config/skeleton.config';
 

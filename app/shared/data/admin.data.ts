@@ -24,3 +24,7 @@ export const adminNavItems: TypeAdminNavItem[] = [
     link: AppRoute.Manage + AppRoute.AGenres,
   },
 ];
+
+export const HeaderItems = {
+  Users: ['Email', 'Date register'],
+}

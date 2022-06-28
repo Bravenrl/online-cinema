@@ -5,7 +5,7 @@ import Link from 'next/link';
 import SkeletonLoader from '@/components/ui/skeleton-loader/skeleton-loader';
 import SubHeading from '@/components/ui/sub-heading/sub-heading';
 
-import { usePopularMovies } from '@/hooks/use-popular-movie';
+import { usePopularMovies } from '@/hooks/query-hooks/use-popular-movie';
 
 import { getUrl } from '@/utils/api.utils';
 

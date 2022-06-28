@@ -3,7 +3,7 @@ import { useQuery } from 'react-query';
 
 import SkeletonLoader from '@/components/ui/skeleton-loader/skeleton-loader';
 
-import { useCountUsers } from '@/hooks/use-user-count';
+import { useCountUsers } from '@/hooks/query-hooks/use-user-count';
 
 import styles from './count-users.module.scss';
 

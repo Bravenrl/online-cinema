@@ -4,4 +4,6 @@ export enum QueryTitle {
   Popular = 'popular movies sidebar',
   Favorite = 'favorite movies sidebar',
   CountUsers = 'count users',
+  SearchUser = 'search users list',
+  DeleteUser = 'delete user',
 }

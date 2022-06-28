@@ -1,0 +1,14 @@
+.header {
+    @apply flex items-center justify-between bg-primary bg-opacity-20 shadow-lg
+    mt-8 px-5 rounded-lg transition-colors hover:bg-opacity-20;
+  
+    > p {
+      @apply text-white text-opacity-90 py-2.5 font-semibold;
+      width: 24%;
+  
+      &:last-child {
+        @apply text-right justify-end;
+      }
+    }
+  }
+  

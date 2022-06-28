@@ -5,7 +5,7 @@ import { MovieService } from '@/services/movie.service';
 
 import { QueryTitle } from '@/config/query.config';
 
-import { useDebounce } from './use-debounce';
+import { useDebounce } from '../use-debounce';
 
 export const useSearch = () => {
   const [searchTerm, setSearchTerm] = useState('');
