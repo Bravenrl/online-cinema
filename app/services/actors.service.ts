@@ -1,15 +1,15 @@
 import { axiosFree } from 'api/api';
 import axios from 'api/api';
 
-import { TypeGenre } from '@/shared/types/movie.types';
 
 import { getUrl } from '@/utils/api.utils';
 
 import { ApiRoute } from '@/config/api.config';
+import { TypeActor } from '@/shared/types/movie.types';
 
-export const GenreService = {
+export const ActorService = {
   async getAll(searchTerm?: string) {
-    return axiosFree.get<TypeGenre[]>(ApiRoute.Genres, {
+    return axiosFree.get<TypeActor[]>(ApiRoute.Actors, {
       params: searchTerm
         ? {
             searchTerm,
@@ -18,7 +18,7 @@ export const GenreService = {
     });
   },
 
-  async deleteGenre(_id: string) {
-    return axios.delete<string>(getUrl(ApiRoute.Genres, _id));
+  async deleteActor(_id: string) {
+    return axios.delete<string>(getUrl(ApiRoute.Actors, _id));
   },
 };

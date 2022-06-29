@@ -6,7 +6,7 @@ import { getUrl } from '@/utils/api.utils';
 
 import { ApiRoute } from '@/config/api.config';
 
-export const AdminService = {
+export const UserService = {
   async getCountUsers() {
     return axios.get<number>(ApiRoute.Users + ApiRoute.Count);
   },

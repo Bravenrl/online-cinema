@@ -1,7 +1,9 @@
+import AdminGenres from '@/components/screens/admin/admin-genres/admin-genres';
+
 import { NextPageAuth } from '@/shared/types/auth.types';
 
 const GenresPage: NextPageAuth = () => {
-  return <>GenresPage</>;
+  return <AdminGenres />;
 };
 
 GenresPage.isOnlyAdmin = true;
