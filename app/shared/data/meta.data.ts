@@ -3,6 +3,9 @@ export enum MetaTitle {
   Auth = 'Auth',
   AdminHome = 'Admin panel',
   AdminUsers = 'Admin user list',
+  AdminMovie = 'Admin movie list',
+  AdminGenre = 'Admin genre list',
+  AdminActor = 'Admin actor list',
 }
 
 export const TITLE_ERR = 'Page not found';

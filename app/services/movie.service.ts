@@ -1,4 +1,5 @@
 import { axiosFree } from 'api/api';
+import axios from 'api/api';
 
 import { TypeMovie } from '@/shared/types/movie.types';
 
@@ -18,6 +19,12 @@ export const MovieService = {
   },
 
   async getMostPopular() {
-    return axiosFree.get<TypeMovie[]>(`${ApiRoute.Movies+ApiRoute.MostPopular}`);
+    return axiosFree.get<TypeMovie[]>(
+      `${ApiRoute.Movies + ApiRoute.MostPopular}`
+    );
+  },
+
+  async deleteMovie(_id: string) {
+    return axios.delete<string>(getUrl(ApiRoute.Movies, _id));
   },
 };

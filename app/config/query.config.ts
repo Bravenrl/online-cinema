@@ -6,4 +6,10 @@ export enum QueryTitle {
   CountUsers = 'count users',
   SearchUser = 'search users list',
   DeleteUser = 'delete user',
+  DeleteMovie = 'delete movie',
+  DeleteGenre = 'delete genre',
+  DeleteActor = 'delete actor',
+  SearchActor = 'search actor list',
+  SearchGenre = 'search genre list',
+  SearchAdminMovie = 'search admin movie list',
 }

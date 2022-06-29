@@ -2,10 +2,9 @@ import { ChangeEvent, useMemo, useState } from 'react';
 import { useMutation, useQuery } from 'react-query';
 import { toast } from 'react-toastify';
 
-import { UserService } from '@/services/user.service';
-import { MovieService } from '@/services/movie.service';
+import { ActorService } from '@/services/actors.service';
 
-import { adaptUserToTableItem } from '@/utils/adapter.utils';
+import { adaptActorToTableItem } from '@/utils/adapter.utils';
 import { toastError } from '@/utils/toast-error.utils';
 
 import { QueryTitle } from '@/config/query.config';
@@ -13,7 +12,7 @@ import { ToastMessages } from '@/config/toast.config';
 
 import { useDebounce } from '../use-debounce';
 
-export const useUsers = () => {
+export const useActors = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const debouncedSearch = useDebounce(searchTerm, 500);
 
@@ -22,25 +21,25 @@ export const useUsers = () => {
   };
 
   const queryData = useQuery(
-    [QueryTitle.SearchUser, debouncedSearch],
-    () => UserService.getAllUsers(debouncedSearch),
+    [QueryTitle.SearchActor, debouncedSearch],
+    () => ActorService.getAll(debouncedSearch),
     {
-      select: ({ data }) => data.map(adaptUserToTableItem),
+      select: ({ data }) => data.map(adaptActorToTableItem),
       onError: (error) => {
-        toastError(error, ToastMessages.ErrorUserList);
+        toastError(error, ToastMessages.ErrorActorList);
       },
     }
   );
 
   const { mutateAsync: deleteAsync } = useMutation(
-    QueryTitle.DeleteUser,
-    (userId: string) => UserService.deleteUser(userId),
+    QueryTitle.DeleteActor,
+    (movieId: string) => ActorService.deleteActor(movieId),
     {
       onError: (error) => {
-        toastError(error, ToastMessages.ErrorDeleteUser);
+        toastError(error, ToastMessages.ErrorDeleteActor);
       },
       onSuccess: () => {
-        toast.success(ToastMessages.DeleteUser);
+        toast.success(ToastMessages.DeleteActor);
         queryData.refetch();
       },
     }

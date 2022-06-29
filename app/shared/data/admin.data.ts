@@ -27,4 +27,7 @@ export const adminNavItems: TypeAdminNavItem[] = [
 
 export const HeaderItems = {
   Users: ['Email', 'Date register'],
+  Movies: ['Title', 'Genre', 'Rating'],
+  Genres: ['Name', 'Slug'],
+  Actors: ['Name', 'CountMovies'],
 }

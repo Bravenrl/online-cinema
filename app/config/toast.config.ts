@@ -12,5 +12,14 @@ export enum ToastMessages {
   Error = 'Error required',
   ErrorUserList = 'Error user list',
   ErrorDeleteUser = 'Error delete user',
-  DeleteUser = 'delete is successful'
+  DeleteUser = 'delete is successful',
+  ErrorMovieList = 'Error movie list',
+  ErrorDeleteMovie = 'Error delete movie',
+  DeleteMovie = 'delete is successful',
+  ErrorActorList = 'Error actor list',
+  ErrorDeleteActor = 'Error delete actor',
+  DeleteActor = 'delete is successful',
+  ErrorGenreList = 'Error genre list',
+  ErrorDeleteGenre = 'Error delete genre',
+  DeleteGenre = 'delete is successful'
 }
