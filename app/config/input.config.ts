@@ -16,3 +16,15 @@ export enum InputPassword {
   Type = 'password',
   AutoComplete = 'new-password'
 }
+
+export enum InputGenre {
+  Name = 'name',
+  Placeholder = 'Name',
+  Required = 'Name is required',
+}
+
+export enum InputIcon {
+  Name = 'icon',
+  Placeholder = 'Icon',
+  Required = 'Icon is required',
+}

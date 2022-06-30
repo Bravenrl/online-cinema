@@ -1,7 +1,7 @@
 import { axiosFree } from 'api/api';
 import axios from 'api/api';
 
-import { TypeGenre } from '@/shared/types/movie.types';
+import { TypeGenre, TypeGenreEdit } from '@/shared/types/movie.types';
 
 import { getUrl } from '@/utils/api.utils';
 
@@ -18,7 +18,16 @@ export const GenreService = {
     });
   },
 
-  async deleteGenre(_id: string) {
+  async getById(_id: string) {
+    return axios.get<TypeGenreEdit>(getUrl(ApiRoute.Genres, _id));
+  },
+  
+  async update(_id: string, data: TypeGenreEdit) {
+    return axios.put<string>(getUrl(ApiRoute.Genres, _id), data);
+  },
+  
+  async delete(_id: string) {
     return axios.delete<string>(getUrl(ApiRoute.Genres, _id));
   },
+
 };

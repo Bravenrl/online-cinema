@@ -21,5 +21,8 @@ export enum ToastMessages {
   DeleteActor = 'delete is successful',
   ErrorGenreList = 'Error genre list',
   ErrorDeleteGenre = 'Error delete genre',
-  DeleteGenre = 'delete is successful'
+  DeleteGenre = 'delete is successful',
+  ErrorGetGenre = 'Get genre',
+  ErrorUpdateGenre = 'Update genre',
+  UpdateGenre = 'Genre update is successful',
 }
