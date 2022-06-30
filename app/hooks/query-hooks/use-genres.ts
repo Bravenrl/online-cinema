@@ -33,7 +33,7 @@ export const useGenres = () => {
 
   const { mutateAsync: deleteAsync } = useMutation(
     QueryTitle.DeleteGenre,
-    (movieId: string) => GenreService.deleteGenre(movieId),
+    (movieId: string) => GenreService.delete(movieId),
     {
       onError: (error) => {
         toastError(error, ToastMessages.ErrorDeleteGenre);

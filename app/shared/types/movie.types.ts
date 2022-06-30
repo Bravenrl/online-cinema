@@ -8,6 +8,8 @@ export type TypeGenre = {
   icon: TypeMaterialIcon;
 };
 
+export type TypeGenreEdit = Omit<TypeGenre, '_id'>;
+
 export type TypeMovieParams = {
   year: number;
   duration: number;

@@ -13,6 +13,7 @@ export enum HeadingTitle {
   AdminGenres = 'Genres',
   AdminMovies = 'Movies',
   AdminActors = 'Actors',
+  EditGenre = 'Edit genre',
 }
 
 export enum SubHeadingTitle {
