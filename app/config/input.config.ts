@@ -28,3 +28,9 @@ export enum InputIcon {
   Placeholder = 'Icon',
   Required = 'Icon is required',
 }
+
+export enum InputSlug {
+  Name = 'slug',
+  Placeholder = 'Slug',
+  Required = 'Slug is required',
+}

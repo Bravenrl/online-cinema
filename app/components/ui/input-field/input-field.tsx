@@ -12,11 +12,11 @@ type InputFieldProps = InputHTMLAttributes<HTMLInputElement> & {
 
 const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
   (
-    { placeholder, error, type = 'text', autoComplete='on', style, ...rest },
+    { placeholder, error, type = 'text', autoComplete='on', className, ...rest },
     ref
   ) => {
     return (
-      <div className={cn(styles.common, styles.field)} style={style}>
+      <div className={cn(styles.common, styles.field, className)}>
         <label>
           <span>{placeholder}</span>
           <input type={type} ref={ref} {...rest} autoComplete={autoComplete} />

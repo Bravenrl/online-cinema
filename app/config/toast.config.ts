@@ -25,4 +25,6 @@ export enum ToastMessages {
   ErrorGetGenre = 'Get genre',
   ErrorUpdateGenre = 'Update genre',
   UpdateGenre = 'Genre update is successful',
+  CreateGenre = 'create is successful',
+  ErrorCreateGenre = 'Create genre',
 }

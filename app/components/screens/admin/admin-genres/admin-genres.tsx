@@ -20,6 +20,7 @@ function AdminGenres({}: AdminGenresProps): JSX.Element {
     isLoading,
     data: items,
     deleteAsync,
+    createAsync,
   } = useGenres();
   return (
     <>
@@ -27,7 +28,7 @@ function AdminGenres({}: AdminGenresProps): JSX.Element {
       <main>
         <AdminNavigation />
         <Heading title={HeadingTitle.AdminGenres} />
-        <AdminHeader searchTerm={searchTerm} handleSearch={handleSearch} />
+        <AdminHeader searchTerm={searchTerm} handleSearch={handleSearch} onClick={createAsync}/>
         <AdminTable
           tableItems={items ?? []}
           headerItems={HeaderItems.Genres}
