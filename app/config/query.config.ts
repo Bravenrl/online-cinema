@@ -14,4 +14,5 @@ export enum QueryTitle {
   SearchAdminMovie = 'search admin movie list',
   Genre = 'genre',
   UpdateGenre = 'update genre',
+  CreateGenre = 'create genre',
 }

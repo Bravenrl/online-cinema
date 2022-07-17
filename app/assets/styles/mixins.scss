@@ -1,13 +1,12 @@
-.form {
+@mixin form-mixin {
   @apply mt-12;
   .fields {
     @apply flex items-center flex-wrap justify-between;
+    > div {
+      width: 48%;
+    }
   }
   > button {
-    @apply mt-10;
+    @apply mt-18;
   }
-}
-
-.item {
-  width: 31%;
 }

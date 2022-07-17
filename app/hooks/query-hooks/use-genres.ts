@@ -11,10 +11,13 @@ import { QueryTitle } from '@/config/query.config';
 import { ToastMessages } from '@/config/toast.config';
 
 import { useDebounce } from '../use-debounce';
+import { useRouter } from 'next/router';
+import { AppRoute } from '@/config/app.config';
 
 export const useGenres = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const debouncedSearch = useDebounce(searchTerm, 500);
+  const {push} = useRouter();
 
   const handleSearch = (evt: ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(evt.target.value);
@@ -27,6 +30,21 @@ export const useGenres = () => {
       select: ({ data }) => data.map(adaptGenreToTableItem),
       onError: (error) => {
         toastError(error, ToastMessages.ErrorGenreList);
+      },
+    }
+  );
+
+
+  const { mutateAsync: createAsync } = useMutation(
+    QueryTitle.CreateGenre,
+    () => GenreService.create(),
+    {
+      onError: (error) => {
+        toastError(error, ToastMessages.ErrorCreateGenre);
+      },
+      onSuccess: ({data: _id}) => {
+        toast.success(ToastMessages.CreateGenre);
+        push(`${AppRoute.Manage+AppRoute.Genre+AppRoute.Edit}/${_id}`)
       },
     }
   );
@@ -51,7 +69,8 @@ export const useGenres = () => {
       handleSearch,
       ...queryData,
       deleteAsync,
+      createAsync,
     }),
-    [searchTerm, queryData, deleteAsync]
+    [searchTerm, queryData, deleteAsync, createAsync]
   );
 };
