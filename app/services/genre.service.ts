@@ -21,14 +21,15 @@ export const GenreService = {
   async getById(_id: string) {
     return axios.get<TypeGenreEdit>(getUrl(ApiRoute.Genres, _id));
   },
- 
+  
   async create() {
     return axios.post<string>(ApiRoute.Genres);
   },
-
+  
   async update(_id: string, data: TypeGenreEdit) {
     return axios.put<string>(getUrl(ApiRoute.Genres, _id), data);
   },
+  
   
   async delete(_id: string) {
     return axios.delete<string>(getUrl(ApiRoute.Genres, _id));

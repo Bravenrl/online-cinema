@@ -11,10 +11,13 @@ import { ToastMessages } from '@/config/toast.config';
 
 import { useDebounce } from '../use-debounce';
 import { adaptMovieToTableItem } from '@/utils/adapter.utils';
+import { useRouter } from 'next/router';
+import { AppRoute } from '@/config/app.config';
 
 export const useMovies = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const debouncedSearch = useDebounce(searchTerm, 500);
+  const {push} = useRouter();
 
   const handleSearch = (evt: ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(evt.target.value);
@@ -33,7 +36,7 @@ export const useMovies = () => {
 
   const { mutateAsync: deleteAsync } = useMutation(
     QueryTitle.DeleteMovie,
-    (movieId: string) => MovieService.deleteMovie(movieId),
+    (movieId: string) => MovieService.delete(movieId),
     {
       onError: (error) => {
         toastError(error, ToastMessages.ErrorDeleteMovie);
@@ -45,14 +48,29 @@ export const useMovies = () => {
     }
   );
 
+  const { mutateAsync: createAsync } = useMutation(
+    QueryTitle.CreateMovie,
+    () => MovieService.create(),
+    {
+      onError: (error) => {
+        toastError(error, ToastMessages.ErrorCreateMovie);
+      },
+      onSuccess: ({data: _id}) => {
+        toast.success(ToastMessages.CreateMovie);
+        push(`${AppRoute.Manage+AppRoute.Movie+AppRoute.Edit}/${_id}`)
+      },
+    }
+  );
+
   return useMemo(
     () => ({
       searchTerm,
       handleSearch,
       ...queryData,
       deleteAsync,
+      createAsync,
     }),
-    [searchTerm, queryData, deleteAsync]
+    [searchTerm, queryData, deleteAsync, createAsync]
   );
 };
 
