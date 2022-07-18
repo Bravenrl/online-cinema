@@ -14,6 +14,8 @@ export enum HeadingTitle {
   AdminMovies = 'Movies',
   AdminActors = 'Actors',
   EditGenre = 'Edit genre',
+  EditMovie = 'Edit movie',
+  EditActor = 'Edit actor',
 }
 
 export enum SubHeadingTitle {

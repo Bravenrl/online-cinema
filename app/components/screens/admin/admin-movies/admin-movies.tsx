@@ -20,6 +20,7 @@ function AdminMovies({}: AdminMoviesProps): JSX.Element {
     isLoading,
     data: items,
     deleteAsync,
+    createAsync,
   } = useMovies();
   return (
     <>
@@ -27,7 +28,7 @@ function AdminMovies({}: AdminMoviesProps): JSX.Element {
       <main>
         <AdminNavigation />
         <Heading title={HeadingTitle.AdminMovies} />
-        <AdminHeader searchTerm={searchTerm} handleSearch={handleSearch} />
+        <AdminHeader searchTerm={searchTerm} handleSearch={handleSearch} onClick={createAsync} />
         <AdminTable
           tableItems={items ?? []}
           headerItems={HeaderItems.Movies}

@@ -24,6 +24,8 @@ export type TypeActor = {
   slug: string;
 };
 
+export type TypeActorEdit = Omit<TypeActor, '_id'>;
+
 export type TypeMovie = {
   _id: string;
   poster: string;
@@ -38,3 +40,5 @@ export type TypeMovie = {
   slug: string;
   isSendTelegram: boolean,
 };
+
+export type TypeMovieEdit = Omit<TypeMovie, '_id'>;

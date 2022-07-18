@@ -17,7 +17,7 @@ export enum InputPassword {
   AutoComplete = 'new-password'
 }
 
-export enum InputGenre {
+export enum InputName {
   Name = 'name',
   Placeholder = 'Name',
   Required = 'Name is required',

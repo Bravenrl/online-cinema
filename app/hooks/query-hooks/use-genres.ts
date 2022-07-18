@@ -13,11 +13,13 @@ import { ToastMessages } from '@/config/toast.config';
 import { useDebounce } from '../use-debounce';
 import { useRouter } from 'next/router';
 import { AppRoute } from '@/config/app.config';
+import { usePopularGenres } from './use-popular-genres';
 
 export const useGenres = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const debouncedSearch = useDebounce(searchTerm, 500);
   const {push} = useRouter();
+  const {refetch: refetchPopularGenres} = usePopularGenres();
 
   const handleSearch = (evt: ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(evt.target.value);
@@ -59,6 +61,7 @@ export const useGenres = () => {
       onSuccess: () => {
         toast.success(ToastMessages.DeleteGenre);
         queryData.refetch();
+        refetchPopularGenres();
       },
     }
   );

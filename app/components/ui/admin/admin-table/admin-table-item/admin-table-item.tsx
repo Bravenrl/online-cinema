@@ -15,8 +15,8 @@ function AdminTableItem({
 }: AdminTableItemProps): JSX.Element {
   return (
     <div className={styles.item}>
-      {items.map((item) => (
-        <div key={`${_id}${item}`}>{item}</div>
+      {items.map((item, index) => (
+        <div key={`${_id}${item}${index}`}>{item}</div>
       ))}
       <AdminActions editUrl={editUrl} removeHandler={removeHandler} />
     </div>

@@ -7,6 +7,8 @@ export enum MetaTitle {
   AdminGenre = 'Admin genre list',
   AdminActor = 'Admin actor list',
   EditGenre = 'Edit genre',
+  EditMovie = 'Edit movie',
+  EditActor = 'Edit actor',
 }
 
 export const TITLE_ERR = 'Page not found';

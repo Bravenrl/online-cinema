@@ -3,9 +3,9 @@ import { SubmitHandler, UseFormSetValue } from 'react-hook-form';
 import { useMutation, useQuery } from 'react-query';
 import { toast } from 'react-toastify';
 
-import { TypeGenreEdit } from '@/shared/types/movie.types';
+import { TypeActorEdit } from '@/shared/types/movie.types';
 
-import { GenreService } from '@/services/genre.service';
+import { ActorService } from '@/services/actors.service';
 
 import { getKeys } from '@/utils/object.utils';
 import { toastError } from '@/utils/toast-error.utils';
@@ -13,17 +13,15 @@ import { toastError } from '@/utils/toast-error.utils';
 import { AppRoute } from '@/config/app.config';
 import { QueryTitle } from '@/config/query.config';
 import { ToastMessages } from '@/config/toast.config';
-import { usePopularGenres } from './use-popular-genres';
 
-export const useGenreEdit = (setValue: UseFormSetValue<TypeGenreEdit>) => {
+export const useActorEdit = (setValue: UseFormSetValue<TypeActorEdit>) => {
   const { push, query } = useRouter();
-  const {refetch: refetchPopularGenres} = usePopularGenres();
 
-  const genreID = String(query.id);
+  const actorID = String(query.id);
 
   const { isLoading } = useQuery(
-    [QueryTitle.Genre, genreID],
-    () => GenreService.getById(genreID),
+    [QueryTitle.Actor, actorID],
+    () => ActorService.getById(actorID),
     {
       onSuccess: ({ data }) => {
         getKeys(data).forEach((key) => {
@@ -31,32 +29,31 @@ export const useGenreEdit = (setValue: UseFormSetValue<TypeGenreEdit>) => {
         });
       },
       onError(err) {
-        toastError(err, ToastMessages.ErrorGetGenre);
+        toastError(err, ToastMessages.ErrorGetActor);
       },
       enabled: !!query.id,
     }
   );
 
   const { mutateAsync } = useMutation(
-    QueryTitle.UpdateGenre,
-    (data: TypeGenreEdit) => GenreService.update(genreID, data),
+    QueryTitle.UpdateActor,
+    (data: TypeActorEdit) => ActorService.update(actorID, data),
     {
       onError(err) {
-        toastError(err, ToastMessages.ErrorUpdateGenre);
+        toastError(err, ToastMessages.ErrorUpdateActor);
       },
       onSuccess() {
-        toast.success(ToastMessages.UpdateGenre);
-        push(AppRoute.Manage + AppRoute.AGenres);
+        toast.success(ToastMessages.UpdateActor);
+        push(AppRoute.Manage + AppRoute.AActors);
       },
     }
   );
 
-  const onSubmit: SubmitHandler<TypeGenreEdit> = async (
-    data: TypeGenreEdit
+  const onSubmit: SubmitHandler<TypeActorEdit> = async (
+    data: TypeActorEdit
   ) => {
     await mutateAsync(data);
-    refetchPopularGenres();
   };
 
-  return {onSubmit, isLoading};
+  return { onSubmit, isLoading };
 };

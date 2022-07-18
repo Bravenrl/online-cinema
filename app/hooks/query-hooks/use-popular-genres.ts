@@ -8,6 +8,6 @@ import { QueryTitle } from '@/config/query.config';
 
 export const usePopularGenres = () => {
   return useQuery(QueryTitle.Genres, () => GenreService.getAll(), {
-    select: ({ data }) => data.map(adaptPopularGenreData).slice(0, MAX_GENRE_ITEMS),
+    select: ({ data }) => data.filter(genre=>genre.icon).map(adaptPopularGenreData).slice(0, MAX_GENRE_ITEMS),
   });
 };

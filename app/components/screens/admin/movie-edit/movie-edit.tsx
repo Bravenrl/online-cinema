@@ -13,21 +13,22 @@ import SlugField from '@/components/ui/slug-field/slug-field';
 import { useGenreEdit } from '@/hooks/query-hooks/use-genre-edit';
 
 import { MetaTitle } from '@/shared/data/meta.data';
-import { TypeGenreEdit } from '@/shared/types/movie.types';
+import { TypeGenreEdit, TypeMovieEdit } from '@/shared/types/movie.types';
 
 import { generateSlug } from '@/utils/slug';
 
 import { HeadingTitle } from '@/config/heading.config';
-import { InputName, InputIcon, InputSlug } from '@/config/input.config';
+import { InputGenre, InputIcon, InputSlug } from '@/config/input.config';
 
 import styles from './genre-edit.module.scss';
+import { useMovieEdit } from '@/hooks/query-hooks/use-movie-edit';
 
 const DynamicTextEditor = dynamic(
   () => import('@/components/ui/text-editor/text-editor'),
   { ssr: false }
 );
 
-function GenreEdit(): JSX.Element {
+function MovieEdit(): JSX.Element {
   const {
     handleSubmit,
     register,
@@ -35,18 +36,18 @@ function GenreEdit(): JSX.Element {
     setValue,
     getValues,
     control,
-  } = useForm<TypeGenreEdit>({
+  } = useForm<TypeMovieEdit>({
     mode: 'onChange',
   });
 
-  const { isLoading, onSubmit } = useGenreEdit(setValue);
+  const { isLoading, onSubmit } = useMovieEdit(setValue);
 
   return (
     <>
-      <Meta title={MetaTitle.EditGenre} />
+      <Meta title={MetaTitle.EditMovie} />
       <main>
         <AdminNavigation />
-        <Heading title={HeadingTitle.EditGenre} />
+        <Heading title={HeadingTitle.EditMovie} />
         <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
           {isLoading ? (
             <SkeletonLoader count={3} />
@@ -54,10 +55,10 @@ function GenreEdit(): JSX.Element {
             <>
               <div className={styles.fields}>
                 <InputField
-                  {...register(InputName.Name, {
-                    required: InputName.Required,
+                  {...register(InputGenre.Name, {
+                    required: InputGenre.Required,
                   })}
-                  placeholder={InputName.Placeholder}
+                  placeholder={InputGenre.Placeholder}
                   error={errors.name}
                   className={styles.item}
                 />
@@ -67,7 +68,7 @@ function GenreEdit(): JSX.Element {
                     register={register}
                     error={errors.slug}
                     generate={() =>
-                      setValue('slug', generateSlug(getValues(InputName.Name)))
+                      setValue('slug', generateSlug(getValues(InputGenre.Name)))
                     }
                   />
                 </div>
@@ -114,4 +115,4 @@ function GenreEdit(): JSX.Element {
   );
 }
 
-export default GenreEdit;
+export default MovieEdit;

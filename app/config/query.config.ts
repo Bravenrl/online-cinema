@@ -13,6 +13,12 @@ export enum QueryTitle {
   SearchGenre = 'search genre list',
   SearchAdminMovie = 'search admin movie list',
   Genre = 'genre',
+  Movie = 'movie',
+  Actor = 'actor',
   UpdateGenre = 'update genre',
   CreateGenre = 'create genre',
+  CreateMovie = 'create movie',
+  CreateActor = 'create actor',
+  UpdateMovie = 'update movie',
+  UpdateActor = 'update actor',
 }

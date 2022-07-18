@@ -20,6 +20,7 @@ function AdminActors({}: AdminActorsProps): JSX.Element {
     isLoading,
     data: items,
     deleteAsync,
+    createAsync,
   } = useActors();
   return (
     <>
@@ -27,7 +28,7 @@ function AdminActors({}: AdminActorsProps): JSX.Element {
       <main>
         <AdminNavigation />
         <Heading title={HeadingTitle.AdminActors} />
-        <AdminHeader searchTerm={searchTerm} handleSearch={handleSearch} />
+        <AdminHeader searchTerm={searchTerm} handleSearch={handleSearch} onClick={createAsync}/>
         <AdminTable
           tableItems={items ?? []}
           headerItems={HeaderItems.Actors}
