@@ -37,4 +37,6 @@ export enum ToastMessages {
   ErrorGetMovie = 'Get movie',
   ErrorUpdateMovie = 'Update movie',
   UpdateMovie = 'Movie update is successful',
+  UploadFile = 'Upload file is successful',
+  ErrorUploadFile = 'Upload file',
 }

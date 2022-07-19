@@ -9,6 +9,7 @@ import Heading from '@/components/ui/heading/heading';
 import InputField from '@/components/ui/input-field/input-field';
 import SkeletonLoader from '@/components/ui/skeleton-loader/skeleton-loader';
 import SlugField from '@/components/ui/slug-field/slug-field';
+import UploadField from '@/components/ui/upload-field/upload-field';
 
 import { useActorEdit } from '@/hooks/query-hooks/use-actor-edit';
 import { useGenreEdit } from '@/hooks/query-hooks/use-genre-edit';
@@ -70,7 +71,7 @@ function ActorEdit(): JSX.Element {
                   }
                 />
 
-                {/* <Controller
+                <Controller
                   control={control}
                   name='photo'
                   defaultValue=''
@@ -78,12 +79,18 @@ function ActorEdit(): JSX.Element {
                     field: { value, onChange },
                     fieldState: { error },
                   }) => (
-                    //photo upload
+                    <UploadField
+                      onChange={onChange}
+                      value={value}
+                      error={error}
+                      folder='actors'
+                      placeholder='photo'
+                    />
                   )}
                   rules={{
                     required: 'Photo is required',
                   }}
-                /> */}
+                />
               </div>
               <Button type='submit'>Update</Button>
             </>
