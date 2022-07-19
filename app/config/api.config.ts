@@ -13,6 +13,7 @@ export enum ApiRoute {
   RefreshToken = '/access-token',
   NotFound = '/404',
   Count = '/count',
+  Files = '/files',
 }
 
 export const enum HttpCode {
