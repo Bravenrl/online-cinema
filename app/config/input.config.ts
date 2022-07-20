@@ -23,6 +23,28 @@ export enum InputName {
   Required = 'Name is required',
 }
 
+export enum InputCountry {
+  Name = 'parameters.country',
+  Placeholder = 'Country',
+  Required = 'Country is required',
+}
+export enum InputYear {
+  Name = 'parameters.year',
+  Placeholder = 'Year',
+  Required = 'Year is required',
+}
+export enum InputDuration {
+  Name = 'parameters.duration',
+  Placeholder = 'Duration',
+  Required = 'Duration is required',
+}
+
+export enum InputTitle {
+  Name = 'title',
+  Placeholder = 'Title',
+  Required = 'Title is required',
+}
+
 export enum InputIcon {
   Name = 'icon',
   Placeholder = 'Icon',

@@ -31,7 +31,7 @@ export type TypeMovie = {
   poster: string;
   bigPoster: string;
   title: string;
-  parameters: string;
+  parameters: TypeMovieParams;
   genres: TypeGenre[];
   actors: TypeActor[];
   countOpened: number;

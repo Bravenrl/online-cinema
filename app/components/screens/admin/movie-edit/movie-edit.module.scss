@@ -2,12 +2,14 @@
   @apply mt-12;
   .fields {
     @apply flex items-center flex-wrap justify-between;
+    > div {
+      width: 48%;
+    }
+    .item {
+      width: 31%;
+    }
   }
   > button {
     @apply mt-10;
   }
-}
-
-.item {
-  width: 31%;
 }
