@@ -4,6 +4,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
 @import 'react-toastify/dist/ReactToastify.css';
+@import './react-select.scss';
 
 :root {
   --primary-color: #e30b13;
@@ -47,4 +48,8 @@ input:focus {
   clip-path: inset(100%);
   white-space: nowrap;
   border: 0;
+}
+
+.admin-form {
+	@apply w-1/2 mt-12;
 }

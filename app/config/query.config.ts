@@ -22,4 +22,6 @@ export enum QueryTitle {
   UpdateMovie = 'update movie',
   UpdateActor = 'update actor',
   UploadFile = 'upload file',
+  MovieGenre = 'List of movie genres',
+  MovieActors = 'List of movie actors',
 }

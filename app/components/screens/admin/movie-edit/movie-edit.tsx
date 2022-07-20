@@ -1,6 +1,5 @@
 import dynamic from 'next/dynamic';
 import { Controller, useForm } from 'react-hook-form';
-import { stripHtml } from 'string-strip-html';
 
 import Meta from '@/components/meta/meta';
 import AdminNavigation from '@/components/ui/admin/admin-navigation/admin-navigation';
@@ -9,24 +8,30 @@ import Heading from '@/components/ui/heading/heading';
 import InputField from '@/components/ui/input-field/input-field';
 import SkeletonLoader from '@/components/ui/skeleton-loader/skeleton-loader';
 import SlugField from '@/components/ui/slug-field/slug-field';
+import UploadField from '@/components/ui/upload-field/upload-field';
 
-import { useGenreEdit } from '@/hooks/query-hooks/use-genre-edit';
+import { useMovieActors } from '@/hooks/query-hooks/use-movie-actors';
+import { useMovieEdit } from '@/hooks/query-hooks/use-movie-edit';
+import { useMovieGenres } from '@/hooks/query-hooks/use-movie-genres';
 
 import { MetaTitle } from '@/shared/data/meta.data';
-import { TypeGenreEdit, TypeMovieEdit } from '@/shared/types/movie.types';
+import { TypeMovieEdit } from '@/shared/types/movie.types';
 
 import { generateSlug } from '@/utils/slug';
 
 import { HeadingTitle } from '@/config/heading.config';
-import { InputGenre, InputIcon, InputSlug } from '@/config/input.config';
+import {
+  InputCountry,
+  InputDuration,
+  InputTitle,
+  InputYear,
+} from '@/config/input.config';
 
-import styles from './genre-edit.module.scss';
-import { useMovieEdit } from '@/hooks/query-hooks/use-movie-edit';
+import styles from './movie-edit.module.scss';
 
-const DynamicTextEditor = dynamic(
-  () => import('@/components/ui/text-editor/text-editor'),
-  { ssr: false }
-);
+const DynamicSelect = dynamic(() => import('@/components/ui/select/select'), {
+  ssr: false,
+});
 
 function MovieEdit(): JSX.Element {
   const {
@@ -42,6 +47,10 @@ function MovieEdit(): JSX.Element {
 
   const { isLoading, onSubmit } = useMovieEdit(setValue);
 
+  const { isLoading: isGenresLoading, data: genres } = useMovieGenres();
+
+  const { isLoading: isActorsLoading, data: actors } = useMovieActors();
+
   return (
     <>
       <Meta title={MetaTitle.EditMovie} />
@@ -55,57 +64,147 @@ function MovieEdit(): JSX.Element {
             <>
               <div className={styles.fields}>
                 <InputField
-                  {...register(InputGenre.Name, {
-                    required: InputGenre.Required,
+                  {...register(InputTitle.Name, {
+                    required: InputTitle.Required,
                   })}
-                  placeholder={InputGenre.Placeholder}
-                  error={errors.name}
-                  className={styles.item}
+                  placeholder={InputTitle.Placeholder}
+                  error={errors.title}
                 />
 
-                <div className={styles.item}>
-                  <SlugField
-                    register={register}
-                    error={errors.slug}
-                    generate={() =>
-                      setValue('slug', generateSlug(getValues(InputGenre.Name)))
-                    }
-                  />
-                </div>
+                <SlugField
+                  register={register}
+                  error={errors.slug}
+                  generate={() =>
+                    setValue('slug', generateSlug(getValues(InputTitle.Name)))
+                  }
+                />
 
                 <InputField
-                  {...register(InputIcon.Name, {
-                    required: InputIcon.Required,
+                  {...register(InputCountry.Name, {
+                    required: InputCountry.Required,
                   })}
-                  placeholder={InputIcon.Placeholder}
-                  error={errors.name}
+                  placeholder={InputCountry.Placeholder}
+                  error={errors.parameters?.country}
                   className={styles.item}
                 />
-              </div>
-              <Controller
-                control={control}
-                name='description'
-                defaultValue=''
-                render={({
-                  field: { value, onChange },
-                  fieldState: { error },
-                }) => (
-                  <DynamicTextEditor
-                    onChange={onChange}
-                    value={value}
-                    error={error}
-                    placeholder={'description'}
-                  />
-                )}
-                rules={{
-                  validate: {
-                    required: (v) =>
-                      (v && stripHtml(v).result.length > 0) ||
-                      'Description is required',
-                  },
-                }}
-              />
+                <InputField
+                  {...register(InputDuration.Name, {
+                    required: InputDuration.Required,
+                  })}
+                  placeholder={InputDuration.Placeholder}
+                  error={errors.parameters?.duration}
+                  className={styles.item}
+                />
 
+                <InputField
+                  {...register(InputYear.Name, {
+                    required: InputYear.Required,
+                  })}
+                  placeholder={InputYear.Placeholder}
+                  error={errors.parameters?.year}
+                  className={styles.item}
+                />
+
+                <Controller
+                  control={control}
+                  name='genres'
+                  render={({ field, fieldState: { error } }) => (
+                    <DynamicSelect
+                      field={field}
+                      options={genres || []}
+                      isLoading={isGenresLoading}
+                      error={error}
+                      placeholder='Genres'
+                      isMulti
+                    />
+                  )}
+                  rules={{
+                    required: 'Please select at least one genre',
+                  }}
+                />
+
+                <Controller
+                  control={control}
+                  name='actors'
+                  render={({ field, fieldState: { error } }) => (
+                    <DynamicSelect
+                      field={field}
+                      options={actors || []}
+                      isLoading={isActorsLoading}
+                      error={error}
+                      placeholder='Actors'
+                      isMulti
+                    />
+                  )}
+                  rules={{
+                    required: 'Please select at least one actor',
+                  }}
+                />
+
+                <Controller
+                  control={control}
+                  name='poster'
+                  defaultValue=''
+                  render={({
+                    field: { value, onChange },
+                    fieldState: { error },
+                  }) => (
+                    <UploadField
+                      onChange={onChange}
+                      value={value}
+                      error={error}
+                      folder='movies'
+                      placeholder='Poster'
+                    />
+                  )}
+                  rules={{
+                    required: 'Poster is required',
+                  }}
+                />
+
+                <Controller
+                  control={control}
+                  name='bigPoster'
+                  defaultValue=''
+                  render={({
+                    field: { value, onChange },
+                    fieldState: { error },
+                  }) => (
+                    <UploadField
+                      onChange={onChange}
+                      value={value}
+                      error={error}
+                      folder='movies'
+                      placeholder='big poster'
+                    />
+                  )}
+                  rules={{
+                    required: 'Big poster is required',
+                  }}
+                />
+
+                <Controller
+                  control={control}
+                  name='videoUrl'
+                  defaultValue=''
+                  render={({
+                    field: { value, onChange },
+                    fieldState: { error },
+                  }) => (
+                    <UploadField
+                      onChange={onChange}
+                      value={value}
+                      error={error}
+                      folder='movies'
+                      placeholder='Video'
+                      isNoImage={true}
+                    />
+                  )}
+                  rules={{
+                    required: 'Video is required',
+                  }}
+                />
+              </div>
               <Button type='submit'>Update</Button>
             </>
           )}
