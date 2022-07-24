@@ -17,11 +17,11 @@ import { ToastMessages } from '@/config/toast.config';
 export const useMovieEdit = (setValue: UseFormSetValue<TypeMovieEdit>) => {
   const { push, query } = useRouter();
 
-  const genreID = String(query.id);
+  const movieID = String(query.id);
 
   const { isLoading } = useQuery(
-    [QueryTitle.Movie, genreID],
-    () => MovieService.getById(genreID),
+    [QueryTitle.Movie, movieID],
+    () => MovieService.getById(movieID),
     {
       onSuccess: ({ data }) => {
         getKeys(data).forEach((key) => {
@@ -37,7 +37,7 @@ export const useMovieEdit = (setValue: UseFormSetValue<TypeMovieEdit>) => {
 
   const { mutateAsync } = useMutation(
     QueryTitle.UpdateMovie,
-    (data: TypeMovieEdit) => MovieService.update(genreID, data),
+    (data: TypeMovieEdit) => MovieService.update(movieID, data),
     {
       onError(err) {
         toastError(err, ToastMessages.ErrorUpdateMovie);
