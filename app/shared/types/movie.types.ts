@@ -41,4 +41,7 @@ export type TypeMovie = {
   isSendTelegram: boolean,
 };
 
-export type TypeMovieEdit = Omit<TypeMovie, '_id'>;
+export type TypeMovieEdit = Omit<TypeMovie, '_id' | 'rating' | 'countOpened' | 'genres' | 'actors'> & {
+  genres: string[];
+  actors: string[];
+};
