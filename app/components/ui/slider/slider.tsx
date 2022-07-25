@@ -1,3 +1,4 @@
+import { createRef } from 'react';
 import { CSSTransition } from 'react-transition-group';
 
 import { useSlider } from '@/hooks/use-slider';
@@ -18,6 +19,7 @@ function Slider({ slides, buttonTitle }: SliderProps): JSX.Element {
   const { index, slideIn, isNext, isPrev, handleClick } = useSlider(
     slides.length
   );
+  const nodeRef = createRef<HTMLDivElement>();
   return (
     <div className={styles.slider}>
       <CSSTransition
@@ -25,10 +27,14 @@ function Slider({ slides, buttonTitle }: SliderProps): JSX.Element {
         classNames='slide-animation'
         timeout={300}
         unmountOnExit
+        nodeRef={nodeRef}
       >
-        <SlideItem slide={slides[index]} buttonTitle={buttonTitle} />
+        <SlideItem
+          slide={slides[index]}
+          buttonTitle={buttonTitle}
+          nodeRef={nodeRef}
+        />
       </CSSTransition>
-
       {isPrev && (
         <SlideArrow variant='left' clickHandler={() => handleClick('prev')} />
       )}

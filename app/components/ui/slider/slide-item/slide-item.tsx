@@ -4,16 +4,18 @@ import { useRouter } from 'next/router';
 import { TypeSlide } from '@/shared/types/slider.types';
 
 import styles from '../slider.module.scss';
+import { RefObject } from 'react';
 
 type SlideItemProps = {
   slide: TypeSlide;
   buttonTitle?: string;
+  nodeRef: RefObject<HTMLDivElement>
 };
 
-function SlideItem({ buttonTitle, slide }: SlideItemProps): JSX.Element {
+function SlideItem({ buttonTitle, slide, nodeRef }: SlideItemProps): JSX.Element {
   const { push } = useRouter();
   return (
-    <div className={styles.slide}>
+    <div className={styles.slide} ref={nodeRef}>
       {slide.bigPoster && (
         <Image
           layout='fill'
