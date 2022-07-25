@@ -28,8 +28,8 @@ function SlideItem({ buttonTitle, slide, nodeRef }: SlideItemProps): JSX.Element
       )}
 
       <div className={styles.content}>
-        <h2 className={styles.heading}> {slide.title} </h2>
-        <h3 className={styles.sub_heading}> {slide.subTitle} </h3>
+        <h3 className={styles.heading}> {slide.title} </h3>
+        <h4 className={styles.sub_heading}> {slide.subTitle} </h4>
         <button className={styles.button} onClick={() => push(slide.link)}>
           {buttonTitle}
         </button>

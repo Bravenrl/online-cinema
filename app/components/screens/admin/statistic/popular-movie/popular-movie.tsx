@@ -2,8 +2,8 @@ import cn from 'classnames';
 import Image from 'next/image';
 import Link from 'next/link';
 
+import SubHeading from '@/components/ui/headings/sub-heading/sub-heading';
 import SkeletonLoader from '@/components/ui/skeleton-loader/skeleton-loader';
-import SubHeading from '@/components/ui/sub-heading/sub-heading';
 
 import { usePopularMovies } from '@/hooks/query-hooks/use-popular-movie';
 
@@ -26,9 +26,7 @@ function PopularMovie({}: PopularMovieProps): JSX.Element {
         movie && (
           <>
             <SubHeading title={SubHeadingTitle.MostPopular} />
-            <h3 className={styles.opened}>
-              Opened {movie.countOpened} times
-            </h3>
+            <h3 className={styles.opened}>Opened {movie.countOpened} times</h3>
             <Link href={getUrl(AppRoute.Movie, movie.slug)}>
               <a>
                 <Image
