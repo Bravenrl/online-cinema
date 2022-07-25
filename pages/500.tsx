@@ -1,4 +1,4 @@
-import Heading from '@/components/ui/heading/heading';
+import Heading from '@/components/ui/headings/heading/heading';
 import Meta from '@/components/meta/meta';
 
 import { TITLE_ERR } from '@/shared/data/meta.data';

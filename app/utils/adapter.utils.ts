@@ -1,4 +1,5 @@
 import { TypeAdminTableItem } from '@/shared/types/admin.types';
+import { TypeGalleryItem } from '@/shared/types/gallery.types';
 import { TypeMenuItem } from '@/shared/types/menu.types';
 import { TypeActor, TypeGenre, TypeMovie } from '@/shared/types/movie.types';
 import { TypeSlide } from '@/shared/types/slider.types';
@@ -57,3 +58,27 @@ export const adaptMovieToSlide = (movie: TypeMovie): TypeSlide => ({
   subTitle: getGenresList(movie.genres),
   title: movie.title,
 });
+
+export const adaptMovieToGallery = (
+  movie: TypeMovie
+): TypeGalleryItem => {
+  return {
+    name: movie.title,
+    posterPath: movie.poster,
+    link: getUrl(AppRoute.Movie, movie.slug),
+  };
+};
+
+export const adaptActorToGallery = (
+  actor: TypeActor
+): TypeGalleryItem => {
+  return {
+    name: actor.name,
+    posterPath: actor.photo,
+    link: getUrl(AppRoute.Actor, actor.slug),
+    content: {
+      title: actor.name,
+      subTitle: `+${actor.countMovies} movies`,
+    }
+  };
+};

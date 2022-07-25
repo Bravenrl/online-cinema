@@ -5,7 +5,7 @@ import { stripHtml } from 'string-strip-html';
 import Meta from '@/components/meta/meta';
 import AdminNavigation from '@/components/ui/admin/admin-navigation/admin-navigation';
 import Button from '@/components/ui/button/button';
-import Heading from '@/components/ui/heading/heading';
+import Heading from '@/components/ui/headings/heading/heading';
 import InputField from '@/components/ui/form-elements/input-field/input-field';
 import SkeletonLoader from '@/components/ui/skeleton-loader/skeleton-loader';
 import SlugField from '@/components/ui/form-elements/slug-field/slug-field';

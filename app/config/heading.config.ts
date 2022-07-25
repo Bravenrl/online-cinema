@@ -20,4 +20,7 @@ export enum HeadingTitle {
 
 export enum SubHeadingTitle {
   MostPopular = 'The most popular movie',
+  Trending = 'Trending now',
+  Best = 'Best actors'
+
 }

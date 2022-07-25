@@ -1,6 +1,6 @@
 import Meta from '@/components/meta/meta';
 import AdminNavigation from '@/components/ui/admin/admin-navigation/admin-navigation';
-import Heading from '@/components/ui/heading/heading';
+import Heading from '@/components/ui/headings/heading/heading';
 
 import { MetaTitle } from '@/shared/data/meta.data';
 
