@@ -3,7 +3,7 @@ import Meta from '@/components/meta/meta';
 import { HeadingClassName, HeadingTitle } from '@/config/heading.config';
 
 import { DESCRIPTION, MetaTitle } from '@/shared/data/meta.data';
-import { SlideType as TypeSlide } from '@/shared/types/slider.types';
+import { TypeSlide } from '@/shared/types/slider.types';
 import Slider from '@/components/ui/slider/slider';
 
 type Home = {
