@@ -1,16 +1,3 @@
-@mixin form-mixin {
-  @apply mt-12;
-  .fields {
-    @apply flex items-center flex-wrap justify-between;
-    > div {
-      width: 48%;
-    }
-  }
-  > button {
-    @apply mt-18;
-  }
-}
-
 @mixin fade-bg-gradient($direction: 90deg) {
   &::before {
     @apply w-full h-full absolute top-0 left-0 z-1;

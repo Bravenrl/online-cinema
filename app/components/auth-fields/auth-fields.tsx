@@ -4,7 +4,7 @@ import { validEmail } from '@/shared/regex';
 
 import { InputEmail, InputPassword } from '@/config/input.config';
 
-import InputField from '../ui/input-field/input-field';
+import InputField from '../ui/form-elements/input-field/input-field';
 
 
 type AuthFieldsProps = {

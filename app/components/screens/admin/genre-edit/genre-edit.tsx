@@ -6,9 +6,9 @@ import Meta from '@/components/meta/meta';
 import AdminNavigation from '@/components/ui/admin/admin-navigation/admin-navigation';
 import Button from '@/components/ui/button/button';
 import Heading from '@/components/ui/heading/heading';
-import InputField from '@/components/ui/input-field/input-field';
+import InputField from '@/components/ui/form-elements/input-field/input-field';
 import SkeletonLoader from '@/components/ui/skeleton-loader/skeleton-loader';
-import SlugField from '@/components/ui/slug-field/slug-field';
+import SlugField from '@/components/ui/form-elements/slug-field/slug-field';
 
 import { useGenreEdit } from '@/hooks/query-hooks/use-genre-edit';
 
@@ -20,10 +20,10 @@ import { generateSlug } from '@/utils/slug';
 import { HeadingTitle } from '@/config/heading.config';
 import { InputName, InputIcon, InputSlug } from '@/config/input.config';
 
-import styles from './genre-edit.module.scss';
+import styles from '../edit-form.module.scss';
 
 const DynamicTextEditor = dynamic(
-  () => import('@/components/ui/text-editor/text-editor'),
+  () => import('@/components/ui/form-elements/text-editor/text-editor'),
   { ssr: false }
 );
 

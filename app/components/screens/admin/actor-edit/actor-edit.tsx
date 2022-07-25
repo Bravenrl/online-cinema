@@ -6,10 +6,10 @@ import Meta from '@/components/meta/meta';
 import AdminNavigation from '@/components/ui/admin/admin-navigation/admin-navigation';
 import Button from '@/components/ui/button/button';
 import Heading from '@/components/ui/heading/heading';
-import InputField from '@/components/ui/input-field/input-field';
+import InputField from '@/components/ui/form-elements/input-field/input-field';
 import SkeletonLoader from '@/components/ui/skeleton-loader/skeleton-loader';
-import SlugField from '@/components/ui/slug-field/slug-field';
-import UploadField from '@/components/ui/upload-field/upload-field';
+import SlugField from '@/components/ui/form-elements/slug-field/slug-field';
+import UploadField from '@/components/ui/form-elements/upload-field/upload-field';
 
 import { useActorEdit } from '@/hooks/query-hooks/use-actor-edit';
 import { useGenreEdit } from '@/hooks/query-hooks/use-genre-edit';
@@ -22,7 +22,7 @@ import { generateSlug } from '@/utils/slug';
 import { HeadingTitle } from '@/config/heading.config';
 import { InputIcon, InputName } from '@/config/input.config';
 
-import styles from './actor-edit.module.scss';
+import styles from '../edit-form.module.scss';
 
 function ActorEdit(): JSX.Element {
   const {
