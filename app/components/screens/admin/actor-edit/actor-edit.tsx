@@ -24,11 +24,6 @@ import { InputIcon, InputName } from '@/config/input.config';
 
 import styles from './actor-edit.module.scss';
 
-// const DynamicTextEditor = dynamic(
-//   () => import('@/components/ui/text-editor/text-editor'),
-//   { ssr: false }
-// );
-
 function ActorEdit(): JSX.Element {
   const {
     handleSubmit,

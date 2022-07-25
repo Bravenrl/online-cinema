@@ -1,6 +1,7 @@
 import { TypeAdminTableItem } from '@/shared/types/admin.types';
 import { TypeMenuItem } from '@/shared/types/menu.types';
 import { TypeActor, TypeGenre, TypeMovie } from '@/shared/types/movie.types';
+import { TypeSlide } from '@/shared/types/slider.types';
 import { TypeUserProfileResponse } from '@/shared/types/user.types';
 
 import { AppRoute } from '@/config/app.config';
@@ -47,4 +48,12 @@ export const adaptActorToTableItem = (
   _id: actor._id,
   editUrl: AppRoute.Manage + AppRoute.Actor + AppRoute.Edit + `/${actor._id}`,
   items: [actor.name, String(actor.countMovies)],
+});
+
+export const adaptMovieToSlide = (movie: TypeMovie): TypeSlide => ({
+  _id: movie._id,
+  link: AppRoute.Movie + `/${movie.slug}`,
+  bigPoster: movie.bigPoster,
+  subTitle: getGenresList(movie.genres),
+  title: movie.title,
 });
