@@ -2,9 +2,9 @@ import { FieldError, UseFormRegister } from 'react-hook-form';
 
 import { InputSlug } from '@/config/input.config';
 
-import InputField from '../input-field/input-field';
 
 import styles from './slug-field.module.scss';
+import InputField from '../input-field/input-field';
 
 type SlugFieldProps = {
   error?: FieldError;

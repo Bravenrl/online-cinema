@@ -1,12 +1,12 @@
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 
-import { SlideType } from '@/shared/types/slider.types';
+import { TypeSlide } from '@/shared/types/slider.types';
 
 import styles from '../slider.module.scss';
 
 type SlideItemProps = {
-  slide: SlideType;
+  slide: TypeSlide;
   buttonTitle?: string;
 };
 

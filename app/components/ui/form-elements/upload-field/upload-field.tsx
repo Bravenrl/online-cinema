@@ -6,7 +6,8 @@ import { FieldError } from 'react-hook-form';
 import { useUpload } from '@/hooks/query-hooks/use-upload';
 
 import styles from './upload-field.module.scss';
-import SkeletonLoader from '../skeleton-loader/skeleton-loader';
+import SkeletonLoader from '../../skeleton-loader/skeleton-loader';
+
 
 type UploadFieldProps = {
   folder?: string;
