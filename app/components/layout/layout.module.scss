@@ -1,13 +1,17 @@
+@import '../../assets/styles/mixins';
+
 $bar-width: 20%;
 
 .layout {
   @apply relative;
-
+  
   > nav,
   > aside {
     @apply fixed top-0 bottom-0 overflow-y-scroll;
+    @include styles-scrollbar(width);
     width: $bar-width;
     max-width: 350px;
+    
   }
 
   > nav {

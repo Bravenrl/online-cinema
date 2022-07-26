@@ -19,9 +19,9 @@ function Slider({ slides, buttonTitle }: SliderProps): JSX.Element {
   const { index, slideIn, isNext, isPrev, handleClick } = useSlider(
     slides.length
   );
-  const nodeRef = createRef<HTMLDivElement>();
+  const nodeRef = createRef<HTMLLIElement>();
   return (
-    <div className={styles.slider}>
+    <ul className={styles.slider}>
       <CSSTransition
         in={slideIn}
         classNames='slide-animation'
@@ -41,7 +41,7 @@ function Slider({ slides, buttonTitle }: SliderProps): JSX.Element {
       {isNext && (
         <SlideArrow variant='right' clickHandler={() => handleClick('next')} />
       )}
-    </div>
+    </ul>
   );
 }
 

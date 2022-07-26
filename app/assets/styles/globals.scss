@@ -6,6 +6,7 @@
 @import 'react-toastify/dist/ReactToastify.css';
 @import './react-select.scss';
 @import './slide-animation.scss';
+@import './mixins.scss';
 
 :root {
   --primary-color: #e30b13;
@@ -17,7 +18,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: 'Outfit', sans-serif;
-
+  @include styles-scrollbar(width, 1vw);
   @apply bg-gray-900;
 }
 

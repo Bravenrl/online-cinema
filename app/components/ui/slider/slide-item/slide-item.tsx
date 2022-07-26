@@ -9,13 +9,13 @@ import { RefObject } from 'react';
 type SlideItemProps = {
   slide: TypeSlide;
   buttonTitle?: string;
-  nodeRef: RefObject<HTMLDivElement>
+  nodeRef: RefObject<HTMLLIElement>
 };
 
 function SlideItem({ buttonTitle, slide, nodeRef }: SlideItemProps): JSX.Element {
   const { push } = useRouter();
   return (
-    <div className={styles.slide} ref={nodeRef}>
+    <li className={styles.slide} ref={nodeRef}>
       {slide.bigPoster && (
         <Image
           layout='fill'
@@ -34,7 +34,7 @@ function SlideItem({ buttonTitle, slide, nodeRef }: SlideItemProps): JSX.Element
           {buttonTitle}
         </button>
       </div>
-    </div>
+    </li>
   );
 }
 

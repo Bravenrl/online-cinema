@@ -25,7 +25,7 @@ function Home({ slides, trendingMovies, actors }: Home): JSX.Element {
     <>
       <Meta title={MetaTitle.Home} description={DESCRIPTION} />
       <Heading title={HeadingTitle.Home} className={HeadingClassName.Home} />
-      {slides.length && <Slider slides={slides} />}
+      {slides.length && <Slider slides={slides} buttonTitle={'Watch'}/>}
       <div className='my-10'>
         <SubHeading title={SubHeadingTitle.Trending} />
         {trendingMovies && <Gallery items={trendingMovies} />}
