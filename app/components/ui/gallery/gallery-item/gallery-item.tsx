@@ -15,13 +15,16 @@ function GalleryItem({ item, variant }: GalleryItemProps): JSX.Element {
   return (
     <li
       className={cn(styles.item, {
-        [styles.with_text]: item.content,
         [styles.horizontal]: variant === 'horizontal',
         [styles.vertical]: variant === 'vertical',
       })}
     >
       <Link href={item.link}>
-        <a>
+        <a
+          className={cn(styles.link, {
+            [styles.with_text]: item.content,
+          })}
+        >
           <Image
             alt={item.name}
             src={item.posterPath}
@@ -29,7 +32,6 @@ function GalleryItem({ item, variant }: GalleryItemProps): JSX.Element {
             draggable={false}
             priority
           />
-
           {item.content && (
             <div className={styles.content}>
               <p className={styles.title}> {item.content.title}</p>

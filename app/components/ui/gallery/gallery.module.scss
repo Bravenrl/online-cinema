@@ -3,11 +3,10 @@
 .gallery {
   @apply flex items-center overflow-x-auto flex-nowrap py-3 list-none;
   @include styles-scrollbar(height);
-
 }
 
 .item {
-  @apply relative transition-transform flex items-end shadow-lg rounded-layout overflow-hidden;
+  @apply transition-transform relative shadow-lg rounded-layout overflow-hidden;
   flex: 0 0 auto;
 
   &:hover {
@@ -22,28 +21,34 @@
   &.horizontal {
     @apply mb-8 h-44;
     width: 31%;
+    max-width: 300px;
+    min-width: 250px;
   }
 
+.link {
+  @apply w-full h-full flex items-end;
+ 
   &.with_text {
     @include fade-bg-gradient(0deg);
     &::before {
       @apply rounded-layout;
     }
   }
+  .content {
+    @apply relative z-2 text-center m-3 w-full;
+  
+    .title {
+      @apply font-semibold mb-1 text-white text-shadow;
+    }
+  
+    .subTitle {
+      @apply text-gray-500 text-shadow;
+    }
+  }
+}
 
   img {
     @apply image-like-bg;
   }
 
-  .content {
-    @apply relative z-2 text-center m-3 w-full;
-
-    .title {
-      @apply font-semibold mb-1 text-white text-shadow;
-    }
-
-    .subTitle {
-      @apply text-gray-500 text-shadow;
-    }
-  }
 }

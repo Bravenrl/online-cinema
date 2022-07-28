@@ -59,9 +59,7 @@ export const adaptMovieToSlide = (movie: TypeMovie): TypeSlide => ({
   title: movie.title,
 });
 
-export const adaptMovieToGallery = (
-  movie: TypeMovie
-): TypeGalleryItem => {
+export const adaptMovieToGallery = (movie: TypeMovie): TypeGalleryItem => {
   return {
     name: movie.title,
     posterPath: movie.poster,
@@ -69,9 +67,20 @@ export const adaptMovieToGallery = (
   };
 };
 
-export const adaptActorToGallery = (
-  actor: TypeActor
+export const adaptMovieToGalleryHorizontal = (
+  movie: TypeMovie
 ): TypeGalleryItem => {
+  return {
+    name: movie.title,
+    posterPath: movie.bigPoster,
+    link: getUrl(AppRoute.Movie, movie.slug),
+    content: {
+      title: movie.title,
+    },
+  };
+};
+
+export const adaptActorToGallery = (actor: TypeActor): TypeGalleryItem => {
   return {
     name: actor.name,
     posterPath: actor.photo,
@@ -79,6 +88,6 @@ export const adaptActorToGallery = (
     content: {
       title: actor.name,
       subTitle: `+${actor.countMovies} movies`,
-    }
+    },
   };
 };
