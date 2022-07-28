@@ -22,5 +22,11 @@ export enum SubHeadingTitle {
   MostPopular = 'The most popular movie',
   Trending = 'Trending now',
   Best = 'Best actors'
+}
 
+export enum CatalogTitle {
+  Fresh = 'Fresh movies',
+  FreshDescription = 'New movies & series in excellent quality',
+  Trending = 'Trending movies',
+  TrendingDescription = 'Trending movies & series in excellent quality',
 }

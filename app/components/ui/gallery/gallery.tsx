@@ -7,9 +7,9 @@ type GalleryProps = {
 };
 
 function Gallery({items}: GalleryProps): JSX.Element {
-    return <ul className={styles.gallery}>{
+    return <div className={styles.gallery}>{
         items.map(item => <GalleryItem key={item.link} item={item} variant='vertical'/>)
-    }</ul>;
+    }</div>;
 }
 
 export default Gallery;

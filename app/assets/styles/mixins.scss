@@ -24,11 +24,11 @@
   }
 }
 
-@mixin styles-scrollbar($prop, $value: 0.5vw) {
+@mixin styles-scrollbar($param, $value: 0.5vw) {
 scrollbar-color: rgba(0, 0, 0, 0.3) transparent;
 
   &::-webkit-scrollbar {
-    #{$prop}: $value;
+    #{$param}: $value;
   }
   &::-webkit-scrollbar-thumb {
     border-radius: 5px;
