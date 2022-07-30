@@ -29,6 +29,10 @@ export const ActorService = {
   async getById(_id: string) {
     return axios.get<TypeActorEdit>(getUrl(ApiRoute.Actors, _id));
   },
+
+  async getBySlug(slug: string) {
+    return axiosFree.get<TypeActor>(ApiRoute.Actors+ApiRoute.BySlug+`/${slug}`);
+  },
   
   async update(_id: string, data: TypeActorEdit) {
     return axios.put<string>(getUrl(ApiRoute.Actors, _id), data);

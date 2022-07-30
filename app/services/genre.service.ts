@@ -22,6 +22,10 @@ export const GenreService = {
     return axios.get<TypeGenreEdit>(getUrl(ApiRoute.Genres, _id));
   },
   
+  async getBySlug(slug: string) {
+    return axiosFree.get<TypeGenre>(ApiRoute.Genres+ApiRoute.BySlug+`/${slug}`);
+  },
+
   async create() {
     return axios.post<string>(ApiRoute.Genres);
   },

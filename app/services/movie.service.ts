@@ -35,6 +35,14 @@ export const MovieService = {
   async getById(_id: string) {
     return axios.get<TypeMovieEdit>(getUrl(ApiRoute.Movies, _id));
   },
+
+  async getByActor(actorId: string) {
+    return axiosFree.get<TypeMovie[]>(ApiRoute.Movies+ApiRoute.ByActor+`/${actorId}`);
+  },
+
+  async getByGenres(genreIds: string[]) {
+    return axiosFree.post<TypeMovie[]>(ApiRoute.Movies+ApiRoute.ByGenres, {genreIds});
+  },
   
   async update(_id: string, data: TypeMovieEdit) {
     return axios.put<string>(getUrl(ApiRoute.Movies, _id), data);
