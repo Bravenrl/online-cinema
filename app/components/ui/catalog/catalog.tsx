@@ -13,7 +13,7 @@ import styles from './catalog.module.scss';
 
 type CatalogProps = {
   title: string;
-  description: string;
+  description?: string;
   items: TypeGalleryItem[];
 };
 

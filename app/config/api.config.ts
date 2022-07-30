@@ -14,6 +14,10 @@ export enum ApiRoute {
   NotFound = '/404',
   Count = '/count',
   Files = '/files',
+  BySlug = '/by-slug',
+  ByGenres = '/by-genres',
+  ByActor = '/by-actor',
+
 }
 
 export const enum HttpCode {

@@ -29,4 +29,5 @@ export enum CatalogTitle {
   FreshDescription = 'New movies & series in excellent quality',
   Trending = 'Trending movies',
   TrendingDescription = 'Trending movies & series in excellent quality',
+ 
 }
