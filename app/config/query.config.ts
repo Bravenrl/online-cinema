@@ -15,6 +15,8 @@ export enum QueryTitle {
   Genre = 'genre',
   Movie = 'movie',
   Actor = 'actor',
+  User = 'user',
+  UpdateUser = 'update user',
   UpdateGenre = 'update genre',
   CreateGenre = 'create genre',
   CreateMovie = 'create movie',
@@ -24,4 +26,6 @@ export enum QueryTitle {
   UploadFile = 'upload file',
   MovieGenre = 'List of movie genres',
   MovieActors = 'List of movie actors',
+  Profile = 'profile',
+  UpdateProfile = 'update profile',
 }

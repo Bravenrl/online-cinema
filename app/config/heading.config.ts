@@ -1,6 +1,7 @@
 export enum HeadingClassName {
   Home = 'home',
   Auth = 'auth',
+  Profile = 'profile',
 }
 
 export enum HeadingTitle {
@@ -16,12 +17,14 @@ export enum HeadingTitle {
   EditGenre = 'Edit genre',
   EditMovie = 'Edit movie',
   EditActor = 'Edit actor',
+  Profile = 'Profile',
+  EditUser = 'Edit user',
 }
 
 export enum SubHeadingTitle {
   MostPopular = 'The most popular movie',
   Trending = 'Trending now',
-  Best = 'Best actors'
+  Best = 'Best actors',
 }
 
 export enum CatalogTitle {
@@ -29,5 +32,4 @@ export enum CatalogTitle {
   FreshDescription = 'New movies & series in excellent quality',
   Trending = 'Trending movies',
   TrendingDescription = 'Trending movies & series in excellent quality',
- 
 }

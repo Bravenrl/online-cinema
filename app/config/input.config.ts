@@ -56,3 +56,8 @@ export enum InputSlug {
   Placeholder = 'Slug',
   Required = 'Slug is required',
 }
+
+export enum BtnUserText{
+  Regular = 'Make it regular user',
+  Admin = 'Make it admin',
+}

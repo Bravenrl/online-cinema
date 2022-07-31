@@ -17,6 +17,7 @@ export enum ApiRoute {
   BySlug = '/by-slug',
   ByGenres = '/by-genres',
   ByActor = '/by-actor',
+  Profile = '/profile',
 
 }
 

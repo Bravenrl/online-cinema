@@ -29,3 +29,12 @@ export type TypeUserProfileResponse = TypeUser & {
   updatedAt: string;
   __v: number;
 };
+
+export type TypeUserProfile = Pick<
+  TypeUserProfileResponse,
+  'email' | 'password'
+>;
+
+export type TypeUserProfileEdit = TypeUserProfile & {
+  isAdmin: boolean;
+};

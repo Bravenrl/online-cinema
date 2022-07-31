@@ -7,7 +7,7 @@ export const ToastConfig = {
 
 export enum ToastMessages {
   Registration = 'Registration completed successfully',
-  Login ='Login completed successfully',
+  Login = 'Login completed successfully',
   JWT = 'Your authorization is finished, plz sign in',
   Error = 'Error required',
   ErrorUserList = 'Error user list',
@@ -39,4 +39,8 @@ export enum ToastMessages {
   UpdateMovie = 'Movie update is successful',
   UploadFile = 'Upload file is successful',
   ErrorUploadFile = 'Upload file',
+  ErrorProfile = 'GetProfile',
+  ErrorUpdateProfile = 'Error Updating profile',
+  UpdateProfile = 'Profile update is successful',
+  ErrorGetUser = 'Get user',
 }
