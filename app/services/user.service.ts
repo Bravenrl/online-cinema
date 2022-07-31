@@ -1,6 +1,10 @@
 import axios from 'api/api';
 
-import { TypeUserProfileResponse } from '@/shared/types/user.types';
+import {
+  TypeUserProfile,
+  TypeUserProfileEdit,
+  TypeUserProfileResponse,
+} from '@/shared/types/user.types';
 
 import { getUrl } from '@/utils/api.utils';
 
@@ -20,6 +24,26 @@ export const UserService = {
         : {},
     });
   },
+
+  async getProfile() {
+    return axios.get<TypeUserProfileResponse>(
+      ApiRoute.Users + ApiRoute.Profile
+    );
+  },
+
+  async updateProfile(data: TypeUserProfile) {
+    return axios.put<string>(ApiRoute.Users + ApiRoute.Profile, data);
+  },
+
+
+  async getById(_id: string) {
+    return axios.get<TypeUserProfileResponse>(getUrl(ApiRoute.Users, _id));
+  },
+  
+  async update(_id: string, data: TypeUserProfileEdit) {
+    return axios.put<string>(getUrl(ApiRoute.Users, _id), data);
+  },
+  
 
   async deleteUser(_id: string) {
     return axios.delete<string>(getUrl(ApiRoute.Users, _id));

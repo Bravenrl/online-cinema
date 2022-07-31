@@ -1,16 +1,18 @@
 .form {
-    @apply mt-12;
-    .fields {
-      @apply flex items-center flex-wrap justify-between;
-      > div {
-        width: 48%;
-      }
-      .item {
-        width: 31%;
-      }
+  @apply mt-12;
+  .fields {
+    @apply flex items-center flex-wrap justify-between;
+    > div {
+      width: 48%;
     }
-    > button {
-      @apply mt-10;
+    .item {
+      width: 31%;
+    }
+    .admin {
+      @apply text-link block mb-7;
     }
   }
-  
+  > button {
+    @apply mt-10;
+  }
+}

@@ -1,0 +1,11 @@
+.form {
+  @apply w-1/2 mt-12;
+
+  .profile {
+    @apply mb-6;
+  }
+
+  > buttom {
+    @apply mt-5;
+  }
+}
