@@ -1,4 +1,5 @@
 import { TypeAdminTableItem } from '@/shared/types/admin.types';
+import { TypeLink } from '@/shared/types/assets.types';
 import { TypeGalleryItem } from '@/shared/types/gallery.types';
 import { TypeMenuItem } from '@/shared/types/menu.types';
 import { TypeActor, TypeGenre, TypeMovie } from '@/shared/types/movie.types';
@@ -91,3 +92,12 @@ export const adaptActorToGallery = (actor: TypeActor): TypeGalleryItem => {
     },
   };
 };
+
+export const adaptToLink = (item: TypeGenre | TypeActor): TypeLink => ({
+  _id: item._id,
+  link:
+    'photo' in item
+      ? getUrl(AppRoute.Actor, item.slug)
+      : getUrl(AppRoute.Genre, item.slug),
+  title: item.name,
+});

@@ -19,12 +19,14 @@ export enum HeadingTitle {
   EditActor = 'Edit actor',
   Profile = 'Profile',
   EditUser = 'Edit user',
+  
 }
 
 export enum SubHeadingTitle {
   MostPopular = 'The most popular movie',
   Trending = 'Trending now',
   Best = 'Best actors',
+  Similar = 'Similar',
 }
 
 export enum CatalogTitle {

@@ -40,6 +40,10 @@ export const MovieService = {
     return axiosFree.get<TypeMovie[]>(ApiRoute.Movies+ApiRoute.ByActor+`/${actorId}`);
   },
 
+  async getBySlug(slug: string) {
+    return axiosFree.get<TypeMovie>(ApiRoute.Movies+ApiRoute.BySlug+`/${slug}`);
+  },
+
   async getByGenres(genreIds: string[]) {
     return axiosFree.post<TypeMovie[]>(ApiRoute.Movies+ApiRoute.ByGenres, {genreIds});
   },
