@@ -43,4 +43,7 @@ export enum ToastMessages {
   ErrorUpdateProfile = 'Error Updating profile',
   UpdateProfile = 'Profile update is successful',
   ErrorGetUser = 'Get user',
+  ErrorGetRating = 'Get rating',
+  ErrorSetRating = 'Set rating',
+  SuccessRate = 'You have successfully rated!',
 }

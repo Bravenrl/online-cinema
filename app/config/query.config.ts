@@ -28,4 +28,6 @@ export enum QueryTitle {
   MovieActors = 'List of movie actors',
   Profile = 'profile',
   UpdateProfile = 'update profile',
+  GetMovieRank = 'get movie rank',
+  SetMovieRank = 'set movie rank',
 }

@@ -27,6 +27,7 @@
     "react-query": "3.39.1",
     "react-redux": "8.0.2",
     "react-select": "5.4.0",
+    "react-star-rating-component": "1.4.1",
     "react-toastify": "9.0.5",
     "react-transition-group": "4.4.2",
     "string-strip-html": "10.0.0"
@@ -42,6 +43,7 @@
     "@types/react": "18.0.12",
     "@types/react-dom": "18.0.5",
     "@types/react-draft-wysiwyg": "1.13.4",
+    "@types/react-star-rating-component": "1.4.1",
     "autoprefixer": "10.4.7",
     "classnames": "2.3.1",
     "eslint": "8.17.0",

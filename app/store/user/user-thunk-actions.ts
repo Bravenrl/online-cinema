@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 
 import { TypeUserAuth, TypeUserAuthResponse } from '@/shared/types/user.types';
 
-import { AuthService } from '@/services/auth/auth.service';
+import { AuthService } from '@/services/auth.service';
 
 import { toastError } from '@/utils/toast-error.utils';
 

@@ -1,12 +1,10 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 
 import Movie from '@/components/screens/movie/movie';
-import Catalog from '@/components/ui/catalog/catalog';
 
 import { TypeGalleryItem } from '@/shared/types/gallery.types';
-import { TypeActor, TypeMovie } from '@/shared/types/movie.types';
+import { TypeMovie } from '@/shared/types/movie.types';
 
-import { ActorService } from '@/services/actors.service';
 import { MovieService } from '@/services/movie.service';
 
 import { adaptMovieToGalleryHorizontal } from '@/utils/adapter.utils';

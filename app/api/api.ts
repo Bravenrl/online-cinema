@@ -1,7 +1,7 @@
 import axios, { AxiosError, AxiosRequestConfig } from 'axios';
 import Cookies from 'js-cookie';
 
-import { AuthService } from '@/services/auth/auth.service';
+import { AuthService } from '@/services/auth.service';
 
 import { removeToken } from '@/utils/token.utils';
 

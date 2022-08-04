@@ -18,7 +18,7 @@ export enum ApiRoute {
   ByGenres = '/by-genres',
   ByActor = '/by-actor',
   Profile = '/profile',
-
+  SetRate = '/set-rating',
 }
 
 export const enum HttpCode {

@@ -6,8 +6,5 @@ dayjs.extend(duration);
 export const convertMongoDate = (date: string): string =>
   new Date(date).toLocaleDateString('ru');
 
-export const formatVideoTime = (time: number): string => {
-
-  console.log(Math.floor(time));
-  return dayjs.duration(Math.floor(time), 's').format('mm:ss');
-};
+export const formatVideoTime = (time: number): string =>
+  dayjs.duration(Math.floor(time), 's').format('mm:ss');

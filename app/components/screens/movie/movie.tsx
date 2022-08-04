@@ -18,6 +18,11 @@ const DynamicPlayer = dynamic(
   { ssr: false }
 );
 
+const DynamicRateMovie = dynamic(
+  () => import('@/components/ui/rate-movie/rate-movie'),
+  { ssr: false }
+);
+
 type MovieProps = {
   similarMovies: TypeGalleryItem[];
   movie: TypeMovie;
@@ -35,6 +40,7 @@ function Movie({ movie, similarMovies }: MovieProps): JSX.Element {
         <SubHeading title={SubHeadingTitle.Similar} />
         <Gallery items={similarMovies} />
       </div>
+      <DynamicRateMovie slug={movie.slug} movieId={movie._id} />
     </>
   );
 }

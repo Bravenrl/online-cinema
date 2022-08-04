@@ -3,7 +3,6 @@ import { useMutation, useQuery } from 'react-query';
 import { toast } from 'react-toastify';
 
 import { UserService } from '@/services/user.service';
-import { MovieService } from '@/services/movie.service';
 
 import { adaptUserToTableItem } from '@/utils/adapter.utils';
 import { toastError } from '@/utils/toast-error.utils';
