@@ -1,7 +1,7 @@
 .wrapper {
   @apply mt-12 rounded-2xl overflow-hidden shadow-2xl relative animate-fade;
   &.auth {
-    @apply h-96;
+    @apply h-96 w-full;
   }
   .controls {
     @apply flex-center-between absolute bottom-3 left-6 right-6;

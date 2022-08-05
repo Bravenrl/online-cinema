@@ -18,7 +18,6 @@ type GenrePageProps = {
 };
 
 const GenrePage: NextPage<GenrePageProps> = ({ items, actor }) => {
-  console.log(items);
  return actor ? ( <Catalog
     items={items || []}
     title={actor.name}

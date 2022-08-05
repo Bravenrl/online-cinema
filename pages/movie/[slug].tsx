@@ -17,7 +17,6 @@ type MoviePageProps = {
 };
 
 const MoviePage: NextPage<MoviePageProps> = ({ similarMovies, movie }) => {
-  console.log(similarMovies);
   return movie ? (
     <Movie similarMovies={similarMovies || []} movie={movie} />
   ) : (

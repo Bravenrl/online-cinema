@@ -16,7 +16,6 @@ type MetaProps = {
 function Meta({ title, description, image = null }: MetaProps): JSX.Element {
   const { asPath } = useRouter();
   const currentUrl = `${process.env.APP_URL}${asPath}`;
-  console.log(asPath, currentUrl);
 
   return (
     <Head>

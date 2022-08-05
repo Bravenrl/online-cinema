@@ -19,7 +19,9 @@ export enum ApiRoute {
   ByActor = '/by-actor',
   Profile = '/profile',
   SetRate = '/set-rating',
+  UpdateCount = '/update-count-opened',
 }
+
 
 export const enum HttpCode {
   Unauthorized = 401,

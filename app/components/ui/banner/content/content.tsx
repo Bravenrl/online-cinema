@@ -31,13 +31,6 @@ function Content({ movie }: ContentProps): JSX.Element {
       </div>
       <ContentList name={ContentName.Genres} links={genresLinks} />
       <ContentList name={ContentName.Actors} links={actorsLinks} />
-
-      <div className={styles.rating}>
-        <MaterialIcon name='MdStarRate' />
-        <span>{rating.toFixed(1)}</span>
-      </div>
-
-      {/* fav-btn */}
     </div>
   );
 }

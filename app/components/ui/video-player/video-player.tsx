@@ -1,5 +1,4 @@
 import cn from 'classnames';
-import classNames from 'classnames';
 
 import { useAuth } from '@/hooks/use-auth';
 import { useVideo } from '@/hooks/use-video';
@@ -23,7 +22,7 @@ function VideoPlayer({ videoSource, slug }: VideoPlayerProps): JSX.Element {
   return (
     <div
       className={cn(styles.wrapper, {
-        [styles.auth]: user,
+        [styles.auth]:!user,
       })}
     >
       {user ? (

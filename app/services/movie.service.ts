@@ -23,11 +23,11 @@ export const MovieService = {
       `${ApiRoute.Movies + ApiRoute.MostPopular}`
     );
   },
-  
+
   async create() {
     return axios.post<string>(ApiRoute.Movies);
   },
-  
+
   async delete(_id: string) {
     return axios.delete<string>(getUrl(ApiRoute.Movies, _id));
   },
@@ -37,19 +37,30 @@ export const MovieService = {
   },
 
   async getByActor(actorId: string) {
-    return axiosFree.get<TypeMovie[]>(ApiRoute.Movies+ApiRoute.ByActor+`/${actorId}`);
+    return axiosFree.get<TypeMovie[]>(
+      ApiRoute.Movies + ApiRoute.ByActor + `/${actorId}`
+    );
   },
 
   async getBySlug(slug: string) {
-    return axiosFree.get<TypeMovie>(ApiRoute.Movies+ApiRoute.BySlug+`/${slug}`);
+    return axiosFree.get<TypeMovie>(
+      ApiRoute.Movies + ApiRoute.BySlug + `/${slug}`
+    );
   },
 
   async getByGenres(genreIds: string[]) {
-    return axiosFree.post<TypeMovie[]>(ApiRoute.Movies+ApiRoute.ByGenres, {genreIds});
+    return axiosFree.post<TypeMovie[]>(ApiRoute.Movies + ApiRoute.ByGenres, {
+      genreIds,
+    });
   },
-  
+
   async update(_id: string, data: TypeMovieEdit) {
     return axios.put<string>(getUrl(ApiRoute.Movies, _id), data);
   },
 
+  async updateCountOpened(slug: string) {
+    return axios.post<string>(ApiRoute.Movies + ApiRoute.UpdateCount, {
+      slug
+    });
+  },
 };

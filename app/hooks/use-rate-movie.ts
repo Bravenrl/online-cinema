@@ -1,5 +1,10 @@
 import { useState } from 'react';
-import { useMutation, useQuery } from 'react-query';
+import {
+  QueryClient,
+  useMutation,
+  useQuery,
+  useQueryClient,
+} from 'react-query';
 import { toast } from 'react-toastify';
 
 import { RateService } from '@/services/rate.service';
@@ -8,10 +13,12 @@ import { toastError } from '@/utils/toast-error.utils';
 
 import { QueryTitle } from '@/config/query.config';
 import { ToastMessages } from '@/config/toast.config';
+import { TypeUser } from '@/shared/types/user.types';
 
-export const useRateMovie = (movieId: string) => {
+export const useRateMovie = (movieId: string, user: TypeUser | null) => {
   const [rating, setRating] = useState(0);
   const [isSended, setIsSended] = useState(false);
+  const queryClient = useQueryClient();
 
   const { refetch } = useQuery(
     [QueryTitle.GetMovieRank, movieId],
@@ -23,10 +30,10 @@ export const useRateMovie = (movieId: string) => {
       onError: (err) => {
         toastError(err, ToastMessages.ErrorGetRating);
       },
-      enabled: !!movieId,
+      enabled: !!user,
     }
   );
-
+  
   const { mutateAsync } = useMutation(
     QueryTitle.SetMovieRank,
     ({ value }: { value: number }) => RateService.setRating(movieId, value),
@@ -38,6 +45,7 @@ export const useRateMovie = (movieId: string) => {
         toast.success(ToastMessages.SuccessRate);
         setIsSended(true);
         refetch();
+        queryClient.invalidateQueries(QueryTitle.Popular);
         setTimeout(() => {
           setIsSended(false);
         }, 2400);
@@ -46,7 +54,6 @@ export const useRateMovie = (movieId: string) => {
   );
 
   const handleClick = async (nextValue: number) => {
-    console.log(nextValue);
     setRating(nextValue);
     await mutateAsync({ value: nextValue });
   };

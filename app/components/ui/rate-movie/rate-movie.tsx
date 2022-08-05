@@ -14,7 +14,7 @@ type RateMovieProps = {
 
 function RateMovie({ movieId, slug }: RateMovieProps): JSX.Element {
   const { user } = useAuth();
-  const { rating, isSended, handleClick } = useRateMovie(movieId);
+  const { rating, isSended, handleClick } = useRateMovie(movieId, user);
 
   return (
     <div className={styles.wrapper}>

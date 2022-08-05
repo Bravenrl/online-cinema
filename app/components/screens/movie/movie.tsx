@@ -6,6 +6,8 @@ import Content from '@/components/ui/banner/content/content';
 import Gallery from '@/components/ui/gallery/gallery';
 import SubHeading from '@/components/ui/headings/sub-heading/sub-heading';
 
+import { useUpdateCountOpened } from '@/hooks/query-hooks/use-update-count-opened';
+
 import { TypeGalleryItem } from '@/shared/types/gallery.types';
 import { TypeMovie } from '@/shared/types/movie.types';
 
@@ -29,6 +31,7 @@ type MovieProps = {
 };
 
 function Movie({ movie, similarMovies }: MovieProps): JSX.Element {
+  useUpdateCountOpened(movie.slug);
   return (
     <>
       <Meta title={movie.title} description={`Watch ${movie.title}`} />
