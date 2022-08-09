@@ -11,6 +11,7 @@ export enum MetaTitle {
   EditActor = 'Edit actor',
   Profile = 'Profile',
   EditUser = 'Edit user',
+  Favorites = 'Favorites',
 }
 
 export const TITLE_ERR = 'Page not found';

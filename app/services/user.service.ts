@@ -1,5 +1,6 @@
 import axios from 'api/api';
 
+import { TypeMovie } from '@/shared/types/movie.types';
 import {
   TypeUserProfile,
   TypeUserProfileEdit,
@@ -35,17 +36,27 @@ export const UserService = {
     return axios.put<string>(ApiRoute.Users + ApiRoute.Profile, data);
   },
 
-
   async getById(_id: string) {
     return axios.get<TypeUserProfileResponse>(getUrl(ApiRoute.Users, _id));
   },
-  
+
   async update(_id: string, data: TypeUserProfileEdit) {
     return axios.put<string>(getUrl(ApiRoute.Users, _id), data);
   },
-  
 
   async deleteUser(_id: string) {
     return axios.delete<string>(getUrl(ApiRoute.Users, _id));
+  },
+
+  async getFavorites() {
+    return axios.get<TypeMovie[]>(
+      ApiRoute.Users + ApiRoute.Profile + ApiRoute.Favorites
+    );
+  },
+
+  async toggleFavorites(movieId: string) {
+    return axios.post(ApiRoute.Users + ApiRoute.Profile + ApiRoute.Favorites, {
+      movieId,
+    });
   },
 };

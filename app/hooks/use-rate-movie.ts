@@ -46,6 +46,7 @@ export const useRateMovie = (movieId: string, user: TypeUser | null) => {
         setIsSended(true);
         refetch();
         queryClient.invalidateQueries(QueryTitle.Popular);
+        queryClient.invalidateQueries(QueryTitle.Favorite);
         setTimeout(() => {
           setIsSended(false);
         }, 2400);

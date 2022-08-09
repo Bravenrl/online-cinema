@@ -31,4 +31,5 @@ export enum QueryTitle {
   GetMovieRank = 'get movie rank',
   SetMovieRank = 'set movie rank',
   UpdateCountOpened = 'update count opened',
+  UpdateFavorites = 'update favorite',
 }

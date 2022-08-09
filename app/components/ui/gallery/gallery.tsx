@@ -1,5 +1,5 @@
 import { TypeGalleryItem } from '@/shared/types/gallery.types';
-import GalleryItem from './gallery-item/gallery-item';
+import GalleryItem from '../gallery-item/gallery-item';
 import styles from './gallery.module.scss';
 
 type GalleryProps = {

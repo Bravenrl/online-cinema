@@ -4,6 +4,7 @@ import { adaptToLink } from '@/utils/adapter.utils';
 
 import { ContentName } from '@/config/banner.config';
 
+import FavoriteButton from '../../favorite-button/favorite-button';
 import MaterialIcon from '../../material-icon/material-icon';
 
 import ContentList from './content-list/content-list';
@@ -16,7 +17,7 @@ function Content({ movie }: ContentProps): JSX.Element {
     parameters: { year, country, duration },
     genres,
     actors,
-    rating,
+    _id,
   } = movie;
 
   const genresLinks = genres.slice(0, 3).map(adaptToLink);
@@ -25,12 +26,14 @@ function Content({ movie }: ContentProps): JSX.Element {
     <div className={styles.content}>
       <h1>{movie.title}</h1>
       <div className={styles.details}>
-        <span>{year} · </span>
-        <span>{country} · </span>
+        <span>{year}·</span>
+        <span>{country}·</span>
         <span>{duration} min.</span>
       </div>
       <ContentList name={ContentName.Genres} links={genresLinks} />
       <ContentList name={ContentName.Actors} links={actorsLinks} />
+
+      <FavoriteButton movieId={_id} />
     </div>
   );
 }

@@ -1,13 +1,9 @@
 import Meta from '@/components/meta/meta';
 import { TypeGalleryItem } from '@/shared/types/gallery.types';
 
-import { TypeMovie } from '@/shared/types/movie.types';
-
-import { adaptMovieToGallery } from '@/utils/adapter.utils';
-
-import GalleryItem from '../gallery/gallery-item/gallery-item';
-import Description from '../headings/description/description';
-import Heading from '../headings/heading/heading';
+import GalleryItem from '../../ui/gallery-item/gallery-item';
+import Description from '../../ui/headings/description/description';
+import Heading from '../../ui/headings/heading/heading';
 
 import styles from './catalog.module.scss';
 

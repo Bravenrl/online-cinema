@@ -19,7 +19,7 @@ function ContentList({ name, links }: ContentListProps): JSX.Element {
             <Link href={link.link}>
               <a>{link.title}</a>
             </Link>
-            {index + 1 !== links.length ? ', ' : ''}
+            {index + 1 !== links.length ? ',' : ''}
           </li>
         ))}
       </ul>

@@ -20,6 +20,7 @@ export enum ApiRoute {
   Profile = '/profile',
   SetRate = '/set-rating',
   UpdateCount = '/update-count-opened',
+  Favorites = '/favorites',
 }
 
 

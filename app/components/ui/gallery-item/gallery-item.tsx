@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 import { TypeGalleryItem } from '@/shared/types/gallery.types';
 
-import styles from '../gallery.module.scss';
+import styles from './gallery-item.module.scss';
 
 type GalleryItemProps = {
   item: TypeGalleryItem;

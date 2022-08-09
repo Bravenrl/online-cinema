@@ -46,4 +46,5 @@ export enum ToastMessages {
   ErrorGetRating = 'Get rating',
   ErrorSetRating = 'Set rating',
   SuccessRate = 'You have successfully rated!',
+  ErrorUpdateFavorite = 'Update favorite',
 }

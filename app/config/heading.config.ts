@@ -19,7 +19,7 @@ export enum HeadingTitle {
   EditActor = 'Edit actor',
   Profile = 'Profile',
   EditUser = 'Edit user',
-  
+  Favorites = 'Favorites',
 }
 
 export enum SubHeadingTitle {

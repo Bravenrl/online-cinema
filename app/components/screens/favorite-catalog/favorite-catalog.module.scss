@@ -1,0 +1,21 @@
+.heading {
+  @apply mb-3;
+}
+
+.favorites {
+  @apply flex flex-wrap mt-12;
+}
+
+.container {
+  @apply w-full flex flex-wrap mt-12;
+
+  .skeleton {
+    @apply relative mb-8 h-44;
+    width: 31%;
+
+    &:nth-child(1),
+    &:nth-child(3) {
+      @apply mr-8;
+    }
+  }
+}

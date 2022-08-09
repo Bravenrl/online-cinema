@@ -10,7 +10,7 @@
   }
 
   .links {
-    @apply text-white text-opacity-90;
+    @apply text-white text-opacity-90 indent-1;
     > a {
       @apply text-link;
     }

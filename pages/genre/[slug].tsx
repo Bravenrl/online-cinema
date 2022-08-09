@@ -1,6 +1,6 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 
-import Catalog from '@/components/ui/catalog/catalog';
+import Catalog from '@/components/screens/catalog/catalog';
 
 import { TypeGalleryItem } from '@/shared/types/gallery.types';
 import { TypeGenre } from '@/shared/types/movie.types';

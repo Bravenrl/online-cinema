@@ -1,3 +1,7 @@
-.no-auth {
-  @apply mt-11 bg-gray-700 bg-opacity-20 py-3 px-5 rounded-lg text-white text-opacity-80;
+.loader {
+  @apply mt-11;
+}
+
+.skeleton {
+  @apply h-28 mb-4;
 }
