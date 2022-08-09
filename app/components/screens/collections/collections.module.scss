@@ -1,0 +1,11 @@
+.collections {
+  @apply m-0 p-0 flex-wrap mt-10 list-none flex items-center gap-8;
+
+  > a {
+    @apply animate-fade;
+  }
+}
+
+.heading {
+  @apply mb-3;
+}

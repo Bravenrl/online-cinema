@@ -6,6 +6,7 @@ import { TypeGenre, TypeGenreEdit } from '@/shared/types/movie.types';
 import { getUrl } from '@/utils/api.utils';
 
 import { ApiRoute } from '@/config/api.config';
+import { TypeCollection } from '@/shared/types/gallery.types';
 
 export const GenreService = {
   async getAll(searchTerm?: string) {
@@ -39,4 +40,7 @@ export const GenreService = {
     return axios.delete<string>(getUrl(ApiRoute.Genres, _id));
   },
 
+  async getCollections() {
+    return axiosFree.get<TypeCollection[]>(ApiRoute.Genres+ApiRoute.Collections);
+  },
 };

@@ -12,7 +12,10 @@ export enum MetaTitle {
   Profile = 'Profile',
   EditUser = 'Edit user',
   Favorites = 'Favorites',
+  Discovery = 'Discovery',
 }
 
 export const TITLE_ERR = 'Page not found';
 export const DESCRIPTION = 'Watch MovieApp movies & TV`s online';
+export const DISCOVERY_DESCRIPTION =
+  'In this section you will find all genres of our site';

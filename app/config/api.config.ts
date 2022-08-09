@@ -21,6 +21,7 @@ export enum ApiRoute {
   SetRate = '/set-rating',
   UpdateCount = '/update-count-opened',
   Favorites = '/favorites',
+  Collections = '/collections',
 }
 
 
