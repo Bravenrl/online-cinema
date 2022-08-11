@@ -10,6 +10,7 @@ import { MovieService } from '@/services/movie.service';
 import { adaptMovieToGalleryHorizontal } from '@/utils/adapter.utils';
 
 import { CatalogTitle } from '@/config/heading.config';
+import { REVALIDATE_TIME } from '@/config/const';
 
 type TrendingPageProps = {
   items: TypeGalleryItem[];
@@ -30,6 +31,7 @@ export const getStaticProps: GetStaticProps = async () => {
       props: {
         items,
       } as TrendingPageProps,
+      revalidate: REVALIDATE_TIME,
     };
   } catch (error) {
     return {

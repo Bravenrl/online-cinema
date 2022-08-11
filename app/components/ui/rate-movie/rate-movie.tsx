@@ -6,6 +6,7 @@ import { useRateMovie } from '@/hooks/use-rate-movie';
 import AuthButton from '../video-player/auth-placeholder/auth-button/auth-button';
 
 import styles from './rate-movie.module.scss';
+import { emptyStarColor } from '@/config/const';
 
 type RateMovieProps = {
   movieId: string;
@@ -25,7 +26,7 @@ function RateMovie({ movieId, slug }: RateMovieProps): JSX.Element {
           {isSended ? (
             <div className={styles.thanks}>Thanks for rating!</div>
           ) : (
-            <StarRating name='star' value={rating} onStarClick={handleClick} emptyStarColor='#4f4f4f'/>
+            <StarRating name='star' value={rating} onStarClick={handleClick} emptyStarColor={emptyStarColor}/>
           )}
         </>
       ) : (

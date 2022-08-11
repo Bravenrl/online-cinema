@@ -2,16 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+@import './fonts.scss';
 @import 'react-toastify/dist/ReactToastify.css';
 @import './react-select.scss';
 @import './slide-animation.scss';
 @import './mixins.scss';
 
+
+
+
 :root {
   --primary-color: #e30b13;
   --dark-red-color: #8f050b;
 }
+
 
 html,
 body {

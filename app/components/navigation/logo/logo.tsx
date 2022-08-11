@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import logoImage from '@/assets/images/logo.svg';
+import logoImage from '../../../../public/logo.svg';
 
 import styles from './logo.module.scss';
 

@@ -17,6 +17,7 @@ type FavoriteMoviesProps = {};
 function FavoriteMovies({}: FavoriteMoviesProps): JSX.Element {
   const { favoriteMovies, isLoading } = useFavorites();
   const { user } = useAuth();
+  const favoriteMoviesToShow = favoriteMovies?.slice(0, FAVORITES_COUNT);
 
   if (!user) return <NotAuthFavorites />;
 
@@ -28,7 +29,7 @@ function FavoriteMovies({}: FavoriteMoviesProps): JSX.Element {
     <MoviesList
       title={SidebarTitle.Favorites}
       link={AppRoute.Favorites}
-      movies={favoriteMovies || []}
+      movies={favoriteMoviesToShow || []}
     />
   );
 }

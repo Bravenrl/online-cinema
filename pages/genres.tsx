@@ -5,6 +5,7 @@ import { TypeCollection, TypeGalleryItem } from '@/shared/types/gallery.types';
 
 import Collections from '@/components/screens/collections/collections';
 import { GenreService } from '@/services/genre.service';
+import { REVALIDATE_TIME } from '@/config/const';
 
 type GenresPageProps = {
   collections: TypeCollection[];
@@ -22,6 +23,7 @@ export const getStaticProps: GetStaticProps = async () => {
       props: {
         collections,
       } as GenresPageProps,
+      revalidate: REVALIDATE_TIME,
     };
   } catch (error) {
     return {

@@ -10,6 +10,7 @@ import { adaptActorToGallery, adaptMovieToGallery, adaptMovieToSlide } from '@/u
 import { GALLERY_LENGTH, SLIDER_LENGTH } from '@/shared/data/const';
 import { TypeGalleryItem } from '@/shared/types/gallery.types';
 import { ActorService } from '@/services/actors.service';
+import { REVALIDATE_TIME } from '@/config/const';
 
 type HomePageProps = {
   slides: TypeSlide[];
@@ -38,6 +39,7 @@ export const getStaticProps: GetStaticProps = async () => {
         actors,
         trendingMovies,
       } as HomePageProps,
+      revalidate: REVALIDATE_TIME,
     };
   } catch (error) {
     return {

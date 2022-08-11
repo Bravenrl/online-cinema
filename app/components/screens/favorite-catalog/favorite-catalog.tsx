@@ -15,24 +15,23 @@ type FavoriteCatalogProps = {};
 
 function FavoriteCatalog({}: FavoriteCatalogProps): JSX.Element {
   const { favoriteMovies, isLoading } = useFavorites();
-
   return (
     <>
       <Meta title={MetaTitle.Favorites} />
       <Heading title={HeadingTitle.Favorites} className={styles.heading} />
-        {isLoading ? (
-          <SkeletonLoader
-            count={3}
-            className={styles.skeleton}
-            containerClassName={styles.container}
-          />
-        ) : (
-          <ul className={styles.favorites}>
-            {favoriteMovies?.map((movie) => (
-              <FavoriteItem key={movie._id} movie={movie} />
-            ))}
-          </ul>
-        )}
+      {isLoading ? (
+        <SkeletonLoader
+          count={3}
+          className={styles.skeleton}
+          containerClassName={styles.container}
+        />
+      ) : (
+        <ul className={styles.favorites}>
+          {favoriteMovies?.map((movie) => (
+            <FavoriteItem key={movie._id} movie={movie} />
+          ))}
+        </ul>
+      )}
     </>
   );
 }

@@ -10,6 +10,7 @@ import { MovieService } from '@/services/movie.service';
 
 import { adaptMovieToGalleryHorizontal } from '@/utils/adapter.utils';
 import Error404 from '../404';
+import { REVALIDATE_TIME } from '@/config/const';
 
 
 type GenrePageProps = {
@@ -51,6 +52,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         items,
         genre,
       } as GenrePageProps,
+      revalidate: REVALIDATE_TIME,
     };
   } catch (error) {
     return {

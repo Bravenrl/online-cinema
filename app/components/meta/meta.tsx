@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 
-import logoImage from '@/assets/images/logo.svg';
+import logoImage from '../../../public/logo.svg';
 
 import { onlyText } from '@/utils/string.utils';
 

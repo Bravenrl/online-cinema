@@ -1,3 +1,7 @@
+import dynamic from 'next/dynamic';
+
+import { useAuth } from '@/hooks/use-auth';
+
 import { TypeMovie } from '@/shared/types/movie.types';
 
 import { adaptToLink } from '@/utils/adapter.utils';
@@ -5,10 +9,13 @@ import { adaptToLink } from '@/utils/adapter.utils';
 import { ContentName } from '@/config/banner.config';
 
 import FavoriteButton from '../../favorite-button/favorite-button';
-import MaterialIcon from '../../material-icon/material-icon';
 
 import ContentList from './content-list/content-list';
 import styles from './content.module.scss';
+
+const DynamicStarRate = dynamic(() => import('../../star-rate/star-rate'), {
+  ssr: false,
+});
 
 type ContentProps = { movie: TypeMovie };
 
@@ -18,7 +25,10 @@ function Content({ movie }: ContentProps): JSX.Element {
     genres,
     actors,
     _id,
+    rating,
   } = movie;
+
+  const { user } = useAuth();
 
   const genresLinks = genres.slice(0, 3).map(adaptToLink);
   const actorsLinks = actors.slice(0, 3).map(adaptToLink);
@@ -32,8 +42,8 @@ function Content({ movie }: ContentProps): JSX.Element {
       </div>
       <ContentList name={ContentName.Genres} links={genresLinks} />
       <ContentList name={ContentName.Actors} links={actorsLinks} />
-
-      <FavoriteButton movieId={_id} />
+      <DynamicStarRate className={styles.rating_wrapper} rating={rating} />
+      {(user) ? <FavoriteButton movieId={_id} /> : ''}
     </div>
   );
 }
