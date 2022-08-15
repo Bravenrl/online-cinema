@@ -5,19 +5,19 @@ import { AuthService } from '@/services/auth.service';
 
 import { removeToken } from '@/utils/token.utils';
 
-import { API_SERVER_URL, API_URL, HttpCode } from '@/config/api.config';
+import { API_SERVER_URL, API_LOCAL_URL, HttpCode } from '@/config/api.config';
 import { AuthConfig } from '@/config/auth.config';
 
 import { errCatch, getContentType } from './api.helpers';
 import { IS_PRODUCTION } from '@/config/const';
 
 export const axiosFree = axios.create({
-  baseURL: IS_PRODUCTION ? API_SERVER_URL : API_URL,
+  baseURL: IS_PRODUCTION ? API_SERVER_URL : API_LOCAL_URL,
   headers: getContentType(),
 });
 
 export const axiosInstance = axios.create({
-  baseURL: API_URL,
+  baseURL: IS_PRODUCTION ? API_SERVER_URL : API_LOCAL_URL,
   headers: getContentType(),
 });
 

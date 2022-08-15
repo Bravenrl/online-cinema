@@ -23,10 +23,10 @@ function MovieItem({ movie }: MovieItemProps): JSX.Element {
       <Link href={getUrl(AppRoute.Movie, movie.slug)}>
         <a>
           <Image
-            width={65}
-            height={97}
             src={movie.poster}
             alt={movie.title}
+            width={65}
+            height={97}
             draggable={false}
             priority
           />

@@ -23,7 +23,7 @@ function HeadProvider({ children }: HeadProviderProps): JSX.Element {
         <meta charSet='UTF-8' />
         <meta
           name='viewport'
-          content='width=device-width, initial-scale=1, maximum-scale=1.0'
+          content='width=device-width, initial-scale=1, maximum-scale=5.0'
         />
 
         <Favicons />
@@ -34,6 +34,7 @@ function HeadProvider({ children }: HeadProviderProps): JSX.Element {
           name='apple-mobile-web-app-status-bar-style'
           content={metaColor}
         />
+        <link rel='manifest' href='/manifest.json' />
       </Head>
       {children}
     </>

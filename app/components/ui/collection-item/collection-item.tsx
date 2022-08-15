@@ -3,10 +3,12 @@ import Link from 'next/link';
 
 import { TypeCollection } from '@/shared/types/gallery.types';
 
+import { getUrl } from '@/utils/api.utils';
+
+import { AppRoute } from '@/config/app.config';
+
 import CollectionImage from './collection-image/collection-image';
 import styles from './collection-item.module.scss';
-import { AppRoute } from '@/config/app.config';
-import { getUrl } from '@/utils/api.utils';
 
 type CollectionItemProps = {
   collection: TypeCollection;

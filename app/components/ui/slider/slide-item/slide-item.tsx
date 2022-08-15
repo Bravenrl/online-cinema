@@ -22,6 +22,8 @@ function SlideItem({ buttonTitle, slide, nodeRef }: SlideItemProps): JSX.Element
           className={styles.image}
           src={slide.bigPoster}
           alt={slide.title}
+          height={320}
+          width={720}
           unoptimized
           priority
         />

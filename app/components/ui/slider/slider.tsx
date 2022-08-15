@@ -21,27 +21,29 @@ function Slider({ slides, buttonTitle }: SliderProps): JSX.Element {
   );
   const nodeRef = createRef<HTMLLIElement>();
   return (
-    <ul className={styles.slider}>
-      <CSSTransition
-        in={slideIn}
-        classNames='slide-animation'
-        timeout={300}
-        unmountOnExit
-        nodeRef={nodeRef}
-      >
-        <SlideItem
-          slide={slides[index]}
-          buttonTitle={buttonTitle}
+    <div className={styles.slider}>
+      <ul>
+        <CSSTransition
+          in={slideIn}
+          classNames='slide-animation'
+          timeout={300}
+          unmountOnExit
           nodeRef={nodeRef}
-        />
-      </CSSTransition>
+        >
+          <SlideItem
+            slide={slides[index]}
+            buttonTitle={buttonTitle}
+            nodeRef={nodeRef}
+          />
+        </CSSTransition>
+      </ul>
       {isPrev && (
         <SlideArrow variant='left' clickHandler={() => handleClick('prev')} />
       )}
       {isNext && (
         <SlideArrow variant='right' clickHandler={() => handleClick('next')} />
       )}
-    </ul>
+    </div>
   );
 }
 

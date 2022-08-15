@@ -12,6 +12,8 @@ function Banner({image, children}: BannerProps): JSX.Element {
     <div className={styles.banner}>
       <Image
         src={image}
+        width={720}
+        height={320}
         draggable={false}
         layout='fill'
         className={styles.image}

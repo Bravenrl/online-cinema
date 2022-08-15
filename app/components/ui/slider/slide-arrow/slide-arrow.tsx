@@ -19,6 +19,7 @@ function SlideArrow({ variant, clickHandler }: SlideArrowProps): JSX.Element {
         [styles.left]: isLeft,
         [styles.right]: !isLeft,
       })}
+      aria-label={isLeft ? 'Previous slide' : 'Next slide'}
     >
       <MaterialIcon name={isLeft ? 'MdChevronLeft' : 'MdChevronRight'} />
     </button>

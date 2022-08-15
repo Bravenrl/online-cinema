@@ -27,6 +27,8 @@ function FavoriteItem({ movie }: FavoriteItemProps): JSX.Element {
             layout='fill'
             draggable={false}
             priority
+            width={326}
+            height={198}
           />
           <p className={styles.title}> {movie.title}</p>
         </a>

@@ -5,9 +5,9 @@ import { FieldError } from 'react-hook-form';
 
 import { useUpload } from '@/hooks/query-hooks/use-upload';
 
-import styles from './upload-field.module.scss';
 import SkeletonLoader from '../../skeleton-loader/skeleton-loader';
 
+import styles from './upload-field.module.scss';
 
 type UploadFieldProps = {
   folder?: string;
@@ -41,9 +41,9 @@ function UploadField({
         {!isNoImage && (
           <div className={styles.uploadImageContainer}>
             {isLoading ? (
-              <SkeletonLoader count={1} className={styles.loader}/>
+              <SkeletonLoader count={1} className={styles.loader} />
             ) : (
-              value && <Image alt='' src={value} layout='fill' unoptimized />
+              value && <Image alt='' src={value} layout='fill' unoptimized  height={96} width={96}/>
             )}
           </div>
         )}

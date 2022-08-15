@@ -28,6 +28,8 @@ function GalleryItem({ item, variant }: GalleryItemProps): JSX.Element {
           <Image
             alt={item.name}
             src={item.posterPath}
+            width={(variant === 'horizontal') ? 316 : 200}
+            height={(variant === 'horizontal') ? 198 : 324}
             layout='fill'
             draggable={false}
             priority
