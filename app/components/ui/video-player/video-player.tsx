@@ -22,12 +22,13 @@ function VideoPlayer({ videoSource, slug }: VideoPlayerProps): JSX.Element {
   return (
     <div
       className={cn(styles.wrapper, {
-        [styles.auth]:!user,
+        [styles.auth]: !user,
       })}
     >
       {user ? (
         <>
           <video
+            width={1200}
             ref={videoRef}
             className={styles.video}
             src={`${videoSource}#t=8`}
