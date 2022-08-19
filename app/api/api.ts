@@ -12,12 +12,12 @@ import { errCatch, getContentType } from './api.helpers';
 import { IS_PRODUCTION } from '@/config/const';
 
 export const axiosFree = axios.create({
-  baseURL: IS_PRODUCTION ? API_SERVER_URL : API_LOCAL_URL,
+  baseURL: API_SERVER_URL,
   headers: getContentType(),
 });
 
 export const axiosInstance = axios.create({
-  baseURL: IS_PRODUCTION ? API_SERVER_URL : API_LOCAL_URL,
+  baseURL: API_SERVER_URL,
   headers: getContentType(),
 });
 
