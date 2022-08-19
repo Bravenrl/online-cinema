@@ -1,8 +1,17 @@
-import { useState } from 'react';
+import { TypeSlide } from '@/shared/types/slider.types';
+import { useEffect, useState } from 'react';
 
-export const useSlider = (length: number) => {
+export const useSlider = (slides: TypeSlide[]) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [slideIn, setSlideIn] = useState(true);
+const length = slides.length;
+
+useEffect(() => {
+  slides.forEach(slide => {
+    new Image().src = slide.bigPoster;
+  });
+}, [slides])
+
 
   const isExistNext = currentIndex + 1 < length;
   const isExistPrev = currentIndex ? currentIndex - 1 < length : false;

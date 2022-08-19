@@ -4,6 +4,5 @@ export const emptyStarColor='#4f4f4f'
 
 export const IS_SERVER = typeof window === 'undefined';
 export const IS_CLIENT = typeof window !== 'undefined';
-export const IS_PRODUCTION = process.env.APP_ENV === 'production';
 
 export const REVALIDATE_TIME = 60;

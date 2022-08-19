@@ -17,7 +17,7 @@ type SliderProps = {
 
 function Slider({ slides, buttonTitle }: SliderProps): JSX.Element {
   const { index, slideIn, isNext, isPrev, handleClick } = useSlider(
-    slides.length
+    slides
   );
   const nodeRef = createRef<HTMLLIElement>();
   return (
